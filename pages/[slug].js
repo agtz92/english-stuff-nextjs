@@ -7,7 +7,7 @@ import rehypeRaw from "rehype-raw"
 import Box from "@mui/material/Box"
 import { Chip } from "@mui/material"
 
-export default function Blog({ frontmatter, markdown }) {
+export default function Blog({ frontmatter, markdown, isMobile }) {
   // Format the ISO date for display in the desired locale
   const formattedDate = new Date(frontmatter.date).toLocaleDateString("es-MX")
 
@@ -16,7 +16,7 @@ export default function Blog({ frontmatter, markdown }) {
       <Head>
         <title>Demo Blog | {frontmatter.title}</title>
       </Head>
-      <Box sx={{ paddingLeft: 20, paddingRight: 20 }}>
+      <Box sx={{ paddingLeft: !isMobile ? 20: 5, paddingRight: !isMobile ? 20: 5 }}>
         <h1>{frontmatter.title}</h1>
         <span>{formattedDate}</span>
         <div className="featuredimage-wrapper">
