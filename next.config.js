@@ -6,6 +6,11 @@ const nextConfig = {
 // next.config.js
 module.exports = {
   images: {
-    domains: ["static0.gamerantimages.com", "blog.cdphp.com", "images.ctfassets.net", "https://cdn.shortpixel.ai"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
   },
 }
