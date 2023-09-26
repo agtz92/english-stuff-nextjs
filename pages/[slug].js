@@ -16,7 +16,12 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
       <Head>
         <title>Demo Blog | {frontmatter.title}</title>
       </Head>
-      <Box sx={{ paddingLeft: !isMobile ? 20: 5, paddingRight: !isMobile ? 20: 5 }}>
+      <Box
+        sx={{
+          paddingLeft: !isMobile ? 20 : 5,
+          paddingRight: !isMobile ? 20 : 5,
+        }}
+      >
         <h1>{frontmatter.title}</h1>
         <span>{formattedDate}</span>
         <div className="featuredimage-wrapper">
@@ -54,17 +59,18 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
   )
 }
 
+// Modify the getStaticProps function
 export async function getStaticProps({ params: { slug } }) {
   try {
     const fileContent = matter(fs.readFileSync(`./blog/${slug}.md`, "utf8"))
     const frontmatter = fileContent.data
     const markdown = fileContent.content
 
-    // Convert the Date object to a string in ISO 8601 format
-    const dateString = frontmatter.date.toISOString()
+    // Format the date using the "es-MX" locale
+    const formattedDate = new Date(frontmatter.date).toLocaleDateString("es-MX")
 
     return {
-      props: { frontmatter: { ...frontmatter, date: dateString }, markdown },
+      props: { frontmatter: { ...frontmatter, date: formattedDate }, markdown },
     }
   } catch (error) {
     console.error("Error reading file or parsing frontmatter:", error)
@@ -77,14 +83,6 @@ export async function getStaticProps({ params: { slug } }) {
 export async function getStaticPaths() {
   const filesInProjects = fs.readdirSync("./blog")
 
-  // Getting the filenames excluding .md extension
-  // and returning an array containing slug (the filename) as params for every route
-  // It looks like this
-  // paths = [
-  //   { params: { slug: 'my-first-blog' }},
-  //   { params: { slug: 'how-to-train-a-dragon' }},
-  //   { params: { slug: 'how-to-catch-a-pokemon' }},
-  // ]
   const paths = filesInProjects.map((file) => {
     const filename = file.slice(0, file.indexOf("."))
     return { params: { slug: filename } }
