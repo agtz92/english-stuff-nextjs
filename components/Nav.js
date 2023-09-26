@@ -12,7 +12,7 @@ const Nav = () => {
   return (
     <nav className={`nav ${isOpen ? "open" : ""}`}>
       <div className="logo">
-        <Link href="/">Logo</Link>
+        <Link href="/">3 Min Read</Link>
       </div>
       <div className="menu-toggle" onClick={toggleMenu}>
         <div className="bar"></div>
