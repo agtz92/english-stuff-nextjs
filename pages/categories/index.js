@@ -17,7 +17,7 @@ export default function Home({ blogs }) {
       <ul className={styles["blog-list"]}>
         {blogs.map((blog) => (
           <li key={blog.slug}>
-            <Link href={`/${blog.slug}`}>
+            <Link href="/categories/[slug]" as={`/categories/${blog.slug}`}>
               {blog.categoria}
             </Link>
           </li>
