@@ -4,6 +4,7 @@ import Link from "next/link"
 import Head from "next/head"
 import { Box, Grid } from "@mui/material"
 import LargeCard from "@/components/LargeCard"
+import {sitename} from "../components/siteData"
 
 export default function Home({ blogs, isMobile }) {
   // Sort the blogs by date in descending order
@@ -14,7 +15,7 @@ export default function Home({ blogs, isMobile }) {
       sx={{ marginLeft: !isMobile ? 20 : 5, marginRight: !isMobile ? 20 : 5 }}
     >
       <Head>
-        <title>Demo Blog</title>
+        <title>{sitename}</title>
       </Head>
 
       <Grid container spacing={2}>

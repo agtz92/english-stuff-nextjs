@@ -1,24 +1,39 @@
-// pages/categories/[category].js
-
 import fs from "fs"
 import path from "path"
 import React from "react"
 import matter from "gray-matter"
+import { Box, Grid } from "@mui/material"
+import Link from "next/link"
+import Head from "next/head"
+import LargeCard from "@/components/LargeCard"
+import { sitename } from "@/components/siteData"
 
-export default function CategoryPage({ matchingFiles }) {
+export default function CategoryPage({ matchingFiles, category, isMobile }) {
+  // Sort the blogs by date in descending order
+  const sortedBlogs = matchingFiles?.sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  )
   return (
-    <div>
-      <h1>Posts in this Category:</h1>
-      {matchingFiles && matchingFiles.length > 0 ? (
-        <ul>
-          {matchingFiles.map((file, index) => (
-            <li key={index}>{file.frontmatter.title}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>No posts for this category</p>
-      )}
-    </div>
+    <Box
+      sx={{ marginLeft: !isMobile ? 20 : 5, marginRight: !isMobile ? 20 : 5 }}
+    >
+      <Head>
+        <title>{sitename} | {category}</title>
+      </Head>
+      <h1 style={{ textAlign: "center", fontWeight: 600 }}>
+        {category.toUpperCase()}
+      </h1>
+
+      <Grid container spacing={2}>
+        {sortedBlogs?.map((file, index) => (
+          <Grid key={index} item xs={12} md={3}>
+            <Link href={`/${file.slug}`}>
+              <LargeCard post={file} />
+            </Link>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   )
 }
 
@@ -33,20 +48,27 @@ export async function getStaticProps({ params: { category } }) {
         fs.readFileSync(path.join("./blog", file), "utf8")
       )
       const frontmatter = fileContent.data
+      const shortDescription = frontmatter["short-description"] || ""
 
       if (
         frontmatter.categoria &&
         frontmatter.categoria.toLowerCase() === categorySlug
       ) {
+        const slug = file.slice(0, file.indexOf("."))
         matchingFiles.push({
-          frontmatter: { ...frontmatter, date: frontmatter.date.toISOString() },
+          slug,
+          category: frontmatter.categoria,
+          title: frontmatter.title,
+          date: frontmatter.date.toISOString(),
+          featuredimage: frontmatter.featuredimage,
           markdown: fileContent.content,
+          shortDescription,
         })
       }
     }
 
     return {
-      props: { matchingFiles },
+      props: { matchingFiles, category: category },
     }
   } catch (error) {
     console.error("Error reading files or parsing frontmatter:", error)

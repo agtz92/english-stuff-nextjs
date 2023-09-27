@@ -4,17 +4,21 @@ import React from "react"
 
 const LargeCard = ({ post }) => {
   function generateExcerpt(text, maxLength) {
-    if (text.length <= maxLength) {
-      return text
-    } else {
-      const trimmedText = text.substring(0, maxLength)
-      // Ensure the last word isn't cut off
-      const lastSpaceIndex = trimmedText.lastIndexOf(" ")
-      if (lastSpaceIndex !== -1) {
-        return trimmedText.substring(0, lastSpaceIndex) + "..."
+    if (text) {
+      if (text.length <= maxLength) {
+        return text
       } else {
-        return trimmedText + "..."
+        const trimmedText = text.substring(0, maxLength)
+        // Ensure the last word isn't cut off
+        const lastSpaceIndex = trimmedText.lastIndexOf(" ")
+        if (lastSpaceIndex !== -1) {
+          return trimmedText.substring(0, lastSpaceIndex) + "..."
+        } else {
+          return trimmedText + "..."
+        }
       }
+    } else {
+      return ""
     }
   }
 

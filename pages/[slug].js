@@ -6,10 +6,25 @@ import Image from "next/image"
 import rehypeRaw from "rehype-raw"
 import Box from "@mui/material/Box"
 import { Chip } from "@mui/material"
+import Link from "next/link"
 
 export default function Blog({ frontmatter, markdown, isMobile }) {
   // Format the ISO date for display in the desired locale
   const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US")
+
+  // Define the cleanAndLowercaseString function
+  function cleanAndLowercaseString(inputString) {
+    // Remove special characters, spaces, and "#" if found
+    const cleanedString = inputString
+      .replace(/[^a-zA-Z0-9]+/g, "")
+      .toLowerCase()
+
+    // Split the string by words and join them with hyphens
+    const words = cleanedString.split(/\s+/)
+    const transformedString = words.join("-")
+
+    return transformedString
+  }
 
   return (
     <div>
@@ -30,7 +45,12 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           alignContent={"left"}
           sx={{ marginBottom: 2, marginTop: 2 }}
         >
-          <Chip label={frontmatter.categoria} clickable />
+          <Chip
+            label={frontmatter.categoria}
+            clickable
+            component={Link}
+            href={`/categories/${frontmatter.categoria.toLowerCase()}`}
+          />
         </Box>
 
         <span style={{ color: "#444", fontSize: "12px" }}>
@@ -51,7 +71,14 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           sx={{ marginBottom: 2, marginTop: 2 }}
         >
           {frontmatter.tags?.map((tag) => (
-            <Chip key={tag} label={tag} sx={{ marginRight: 1 }} clickable />
+            <Chip
+              key={tag}
+              component={Link}
+              href={`/tags/${cleanAndLowercaseString(tag)}`}
+              label={tag}
+              sx={{ marginRight: 1 }}
+              clickable
+            />
           ))}
         </Box>
 
