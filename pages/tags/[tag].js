@@ -60,13 +60,14 @@ export async function getStaticPaths() {
     if (frontmatter.tags && frontmatter.tags.length > 0) {
       frontmatter.tags.forEach((tag) => {
         // Use the modified function to get the tag slug
-        tags.add(removeSpecialCharactersAndLowerCase(tag.substring(1)));
+        const tagSlug = removeSpecialCharactersAndLowerCase(tag);
+        tags.add(tagSlug);
       });
     }
   }
 
-  const paths = Array.from(tags).map((tag) => ({
-    params: { tag },
+  const paths = Array.from(tags).map((tagSlug) => ({
+    params: { tag: tagSlug }, // Use the tagSlug as a string
   }));
 
   return {
@@ -88,22 +89,29 @@ export async function getStaticProps({ params: { tag } }) {
     const frontmatter = fileContent.data;
     const shortDescription = frontmatter["short-description"] || "";
 
-    if (frontmatter.tags && frontmatter.tags.includes(`#${tagSlug}`)) {
-      const slug = file.slice(0, file.indexOf("."));
-      matchingFiles.push({
-        slug,
-        title: frontmatter.title,
-        shortDescription: shortDescription,
-        featuredimage: frontmatter.featuredimage,
-        // ...
-      });
+    if (frontmatter.tags) {
+      // Perform a case-insensitive search for the tag
+      const matchingTag = frontmatter.tags.find(
+        (t) => removeSpecialCharactersAndLowerCase(t) === tagSlug
+      );
+
+      if (matchingTag) {
+        const slug = file.slice(0, file.indexOf("."));
+        matchingFiles.push({
+          slug,
+          title: frontmatter.title,
+          shortDescription: shortDescription,
+          featuredimage: frontmatter.featuredimage,
+          // ...
+        });
+      }
     }
   }
 
   return {
     props: {
       matchingFiles,
-      tag,
+      tag: tagSlug, // Use the lowercase tag for display
     },
   };
 }
