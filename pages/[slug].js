@@ -67,8 +67,11 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
         </div>
         <Box
           display={"flex"}
-          flexDirection={"row"}
-          sx={{ marginBottom: 2, marginTop: 2 }}
+          flexDirection={!isMobile ? "row" : "column"}
+          justifyContent={isMobile ? "left": "left"}
+          alignContent={isMobile ? "left": "center"}
+          alignItems={"flex-start"}
+          sx={{ marginBottom: !isMobile ? 2 : 5, marginTop: !isMobile ? 2 : 5 }}
         >
           {frontmatter.tags?.map((tag) => (
             <Chip
@@ -76,13 +79,13 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
               component={Link}
               href={`/tags/${cleanAndLowercaseString(tag)}`}
               label={tag}
-              sx={{ marginRight: 1 }}
+              sx={{ marginRight: 1, marginBottom: !isMobile ? 0 : 2 }}
               clickable
             />
           ))}
         </Box>
 
-        <Box display={"flex"} flexDirection={"column"}>
+        <Box display={"flex"} flexDirection={"column"} className="content">
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk1}
           </ReactMarkdown>
