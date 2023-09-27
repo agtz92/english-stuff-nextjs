@@ -42,7 +42,6 @@ mk1: >-
 
   10. **Horace Slughorn:** The new Potions teacher, who holds key information about Voldemort's Horcruxes.
 mk2: >-
-  
 
   11. **Ron Weasley:** Harry's best friend, who becomes Keeper on the Gryffindor Quidditch team and dates Lavender Brown, causing tension between him and Hermione.
 

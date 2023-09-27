@@ -1,6 +1,6 @@
 ---
 title: "Broadway Show Review: Harry Potter and the Cursed Child"
-date: 2021-12-14T03:57:10.738Z
+date: 2023-05-12T05:29:50.004Z
 featuredimage: /assets/cursed-child-potter-broadway-min.jpg
 categoria: Culture
 deals: Yes
