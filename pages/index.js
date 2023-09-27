@@ -6,6 +6,9 @@ import { Box, Grid } from "@mui/material"
 import LargeCard from "@/components/LargeCard"
 
 export default function Home({ blogs, isMobile }) {
+  // Sort the blogs by date in descending order
+  const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date))
+
   return (
     <Box
       sx={{ marginLeft: !isMobile ? 20 : 5, marginRight: !isMobile ? 20 : 5 }}
@@ -15,7 +18,7 @@ export default function Home({ blogs, isMobile }) {
       </Head>
 
       <Grid container spacing={2}>
-        {blogs.map((blog) => (
+        {sortedBlogs.map((blog) => (
           <Grid key={blog.slug} item xs={12} md={3}>
             <Link href={`/${blog.slug}`}>
               <LargeCard post={blog} />
@@ -46,7 +49,7 @@ export async function getStaticProps() {
 
       // Format the ISO date for display in the desired locale
       const formattedDate = matterData.data.date
-        ? new Date(matterData.data.date).toLocaleDateString("es-MX")
+        ? new Date(matterData.data.date).toLocaleDateString("en-US")
         : ""
 
       // Ensure shortDescription is defined for each blog

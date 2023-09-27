@@ -9,7 +9,7 @@ import { Chip } from "@mui/material"
 
 export default function Blog({ frontmatter, markdown, isMobile }) {
   // Format the ISO date for display in the desired locale
-  const formattedDate = new Date(frontmatter.date).toLocaleDateString("es-MX")
+  const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US")
 
   return (
     <div>
@@ -17,13 +17,26 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
         <title>Demo Blog | {frontmatter.title}</title>
       </Head>
       <Box
+        display={"flex"}
+        flexDirection={"column"}
         sx={{
-          paddingLeft: !isMobile ? 20 : 5,
-          paddingRight: !isMobile ? 20 : 5,
+          paddingLeft: !isMobile ? 40 : 5,
+          paddingRight: !isMobile ? 40 : 5,
         }}
       >
-        <h1>{frontmatter.title}</h1>
-        <span>{formattedDate}</span>
+        <h1 style={{ fontSize: "3em", margin: 0 }}>{frontmatter.title}</h1>
+        <Box
+          display={"flex"}
+          alignContent={"left"}
+          sx={{ marginBottom: 2, marginTop: 2 }}
+        >
+          <Chip label={frontmatter.categoria} clickable />
+        </Box>
+
+        <span style={{ color: "#444", fontSize: "12px" }}>
+          Updated: {formattedDate}
+        </span>
+        <Box sx={{ minHeight: "40px" }} />
         <div className="featuredimage-wrapper">
           <Image
             className="featuredimg"
@@ -32,12 +45,17 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
             fill
           />
         </div>
-        {frontmatter.tags?.map((tag) => (
-          <Chip key={tag} label={tag} sx={{ color: "#fff" }} clickable />
-        ))}
+        <Box
+          display={"flex"}
+          flexDirection={"row"}
+          sx={{ marginBottom: 2, marginTop: 2 }}
+        >
+          {frontmatter.tags?.map((tag) => (
+            <Chip key={tag} label={tag} sx={{ marginRight: 1 }} clickable />
+          ))}
+        </Box>
 
-        <hr />
-        <div className="content">
+        <Box display={"flex"} flexDirection={"column"}>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk1}
           </ReactMarkdown>
@@ -53,7 +71,7 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk5}
           </ReactMarkdown>
-        </div>
+        </Box>
       </Box>
     </div>
   )
@@ -67,7 +85,7 @@ export async function getStaticProps({ params: { slug } }) {
     const markdown = fileContent.content
 
     // Format the date using the "es-MX" locale
-    const formattedDate = new Date(frontmatter.date).toLocaleDateString("es-MX")
+    const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US")
 
     return {
       props: { frontmatter: { ...frontmatter, date: formattedDate }, markdown },

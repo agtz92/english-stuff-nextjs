@@ -1,4 +1,5 @@
 import { Card, CardContent, Grid } from "@mui/material"
+import Image from "next/image"
 import React from "react"
 
 const LargeCard = ({ post }) => {
@@ -18,12 +19,28 @@ const LargeCard = ({ post }) => {
   }
 
   return (
-      <Card sx={{ background: "#111", color: "#fff" }}>
-        <CardContent>
-          <h1>{post.title}</h1>
-          <p>{generateExcerpt(post.shortDescription, 150)}</p>
-        </CardContent>
-      </Card>
+    <Card
+      sx={{
+        background: "#fff",
+        color: "#000",
+        minHeight: "600px",
+        maxHeight: "600px",
+        overflow: "hidden",
+      }}
+    >
+      <CardContent>
+        <div className="featuredimage-wrapper">
+          <Image
+            className="featuredimg"
+            src={post.featuredimage}
+            alt={post.title}
+            fill
+          />
+        </div>
+        <h1>{post.title}</h1>
+        <p>{generateExcerpt(post.shortDescription, 150)}</p>
+      </CardContent>
+    </Card>
   )
 }
 
