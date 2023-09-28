@@ -62,7 +62,7 @@ export default function Home({ blogs, isMobile }) {
         {daRest.map((blog) => (
           <Grid key={blog.slug} item xs={12} md={3}>
             <Link href={`/${blog.slug}`}>
-              <LargeCard post={blog} height="600px" />
+              <LargeCard post={blog}  />
             </Link>
           </Grid>
         ))}

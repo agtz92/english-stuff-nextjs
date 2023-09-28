@@ -28,7 +28,7 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
         {sortedBlogs?.map((file, index) => (
           <Grid key={index} item xs={12} md={3}>
             <Link href={`/${file.slug}`}>
-              <LargeCard post={file} height={'600px'}/>
+              <LargeCard post={file} />
             </Link>
           </Grid>
         ))}
