@@ -2,7 +2,7 @@ import { Card, CardContent, Grid } from "@mui/material"
 import Image from "next/image"
 import React from "react"
 
-const LargeCard = ({ post }) => {
+const LargeCard = ({ post, height }) => {
   function generateExcerpt(text, maxLength) {
     if (text) {
       if (text.length <= maxLength) {
@@ -27,8 +27,8 @@ const LargeCard = ({ post }) => {
       sx={{
         background: "#fff",
         color: "#000",
-        minHeight: "600px",
-        maxHeight: "600px",
+        minHeight: {height},
+        maxHeight: {height},
         overflow: "hidden",
       }}
     >
