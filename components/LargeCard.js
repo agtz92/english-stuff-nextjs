@@ -1,5 +1,6 @@
-import { Card, CardContent, Grid } from "@mui/material"
+import { Card, CardContent, Chip } from "@mui/material"
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
 
 const LargeCard = ({ post, height }) => {
@@ -27,12 +28,13 @@ const LargeCard = ({ post, height }) => {
       sx={{
         background: "#fff",
         color: "#000",
-        minHeight: {height},
-        maxHeight: {height},
+        minHeight: { height },
+        maxHeight: { height },
         overflow: "hidden",
       }}
     >
       <CardContent>
+        <h1 style={{height:'4em', fontSize:'1.2em', fontWeight:'600'}}>{post.title}</h1>
         <div className="featuredimage-wrapper">
           <Image
             className="featuredimg"
@@ -41,7 +43,8 @@ const LargeCard = ({ post, height }) => {
             fill
           />
         </div>
-        <h1>{post.title}</h1>
+        <Chip sx={{ marginTop: 1 }} label={post.categoria} />
+
         <p>{generateExcerpt(post.shortDescription, 150)}</p>
       </CardContent>
     </Card>

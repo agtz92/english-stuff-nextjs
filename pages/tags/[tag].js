@@ -100,6 +100,7 @@ export async function getStaticProps({ params: { tag } }) {
         matchingFiles.push({
           slug,
           title: frontmatter.title,
+          categoria: frontmatter.categoria,
           shortDescription: shortDescription,
           featuredimage: frontmatter.featuredimage,
           // ...

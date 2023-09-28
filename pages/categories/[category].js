@@ -28,7 +28,7 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
         {sortedBlogs?.map((file, index) => (
           <Grid key={index} item xs={12} md={3}>
             <Link href={`/${file.slug}`}>
-              <LargeCard post={file} />
+              <LargeCard post={file} height={'600px'}/>
             </Link>
           </Grid>
         ))}
@@ -58,6 +58,7 @@ export async function getStaticProps({ params: { category } }) {
         matchingFiles.push({
           slug,
           category: frontmatter.categoria,
+          categoria: frontmatter.categoria,
           title: frontmatter.title,
           date: frontmatter.date.toISOString(),
           featuredimage: frontmatter.featuredimage,
