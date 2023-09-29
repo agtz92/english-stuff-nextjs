@@ -17,6 +17,9 @@ dependencies:
   '@mui/material':
     specifier: ^5.14.10
     version: 5.14.10(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
+  '@netlify/next':
+    specifier: ^1.4.9
+    version: 1.4.9(next@13.5.2)
   '@netlify/plugin-nextjs':
     specifier: ^4.40.1
     version: 4.40.1
@@ -743,6 +746,15 @@ packages:
       - encoding
       - idb-keyval
       - supports-color
+    dev: false
+
+  /@netlify/next@1.4.9(next@13.5.2):
+    resolution: {integrity: sha512-lrbY+CEhS9x0jV7oXVYi/rqxZ6ht5KeLGNZsgIPI34kpDaBuD/EfsyKa28BWeSrFalxRZmkMxQYRSTa82v3roQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      next: '>=12.2.0'
+    dependencies:
+      next: 13.5.2(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /@netlify/node-cookies@0.1.0:
