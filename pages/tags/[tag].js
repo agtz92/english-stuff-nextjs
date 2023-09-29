@@ -1,25 +1,25 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Link from "next/link";
-import LargeCard from "@/components/LargeCard";
-import { Box, Grid } from "@mui/material";
-import Head from "next/head";
-import { sitename } from "@/components/siteData";
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import Link from "next/link"
+import LargeCard from "@/components/LargeCard"
+import { Box, Grid } from "@mui/material"
+import Head from "next/head"
+import { sitename } from "@/components/siteData"
 
 function removeSpecialCharactersAndLowerCase(str) {
   // Remove special characters and spaces and convert to lowercase
-  return str.replace(/[^a-zA-Z0-9]+/g, "").toLowerCase();
+  return str.replace(/[^a-zA-Z0-9]+/g, "").toLowerCase()
 }
 
 function TagPage({ matchingFiles, tag, isMobile }) {
   // Sort the blogs by date in descending order
   const sortedBlogs = matchingFiles?.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
-  );
+  )
 
   // Get the slug without removing special characters
-  const tagSlug = removeSpecialCharactersAndLowerCase(tag);
+  const tagSlug = removeSpecialCharactersAndLowerCase(tag)
 
   return (
     <Box
@@ -44,59 +44,59 @@ function TagPage({ matchingFiles, tag, isMobile }) {
         ))}
       </Grid>
     </Box>
-  );
+  )
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync("./blog");
-  const tags = new Set();
+  const files = fs.readdirSync("./blog")
+  const tags = new Set()
 
   for (const file of files) {
     const fileContent = matter(
       fs.readFileSync(path.join("./blog", file), "utf8")
-    );
-    const frontmatter = fileContent.data;
+    )
+    const frontmatter = fileContent.data
 
     if (frontmatter.tags && frontmatter.tags.length > 0) {
       frontmatter.tags.forEach((tag) => {
         // Use the modified function to get the tag slug
-        const tagSlug = removeSpecialCharactersAndLowerCase(tag);
-        tags.add(tagSlug);
-      });
+        const tagSlug = removeSpecialCharactersAndLowerCase(tag)
+        tags.add(tagSlug)
+      })
     }
   }
 
   const paths = Array.from(tags).map((tagSlug) => ({
     params: { tag: tagSlug }, // Use the tagSlug as a string
-  }));
+  }))
 
   return {
     paths,
-    fallback: false,
-  };
+    fallback: "blocking",
+  }
 }
 
 export async function getStaticProps({ params: { tag } }) {
   // Use the modified function to get the tag slug
-  const tagSlug = removeSpecialCharactersAndLowerCase(tag);
-  const files = fs.readdirSync("./blog");
-  const matchingFiles = [];
+  const tagSlug = removeSpecialCharactersAndLowerCase(tag)
+  const files = fs.readdirSync("./blog")
+  const matchingFiles = []
 
   for (const file of files) {
     const fileContent = matter(
       fs.readFileSync(path.join("./blog", file), "utf8")
-    );
-    const frontmatter = fileContent.data;
-    const shortDescription = frontmatter["short-description"] || "";
+    )
+    const frontmatter = fileContent.data
+    const shortDescription = frontmatter["short-description"] || ""
 
     if (frontmatter.tags) {
       // Perform a case-insensitive search for the tag
       const matchingTag = frontmatter.tags.find(
         (t) => removeSpecialCharactersAndLowerCase(t) === tagSlug
-      );
+      )
 
       if (matchingTag) {
-        const slug = file.slice(0, file.indexOf("."));
+        const slug = file.slice(0, file.indexOf("."))
         matchingFiles.push({
           slug,
           title: frontmatter.title,
@@ -104,7 +104,7 @@ export async function getStaticProps({ params: { tag } }) {
           shortDescription: shortDescription,
           featuredimage: frontmatter.featuredimage,
           // ...
-        });
+        })
       }
     }
   }
@@ -114,7 +114,7 @@ export async function getStaticProps({ params: { tag } }) {
       matchingFiles,
       tag: tagSlug, // Use the lowercase tag for display
     },
-  };
+  }
 }
 
-export default TagPage;
+export default TagPage

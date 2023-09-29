@@ -151,7 +151,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // This shows a 404 page if the page is not found
+    fallback: 'blocking', // This shows a 404 page if the page is not found
   }
 }
 

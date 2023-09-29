@@ -105,6 +105,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // Allow for custom handling of 404-like cases
+    fallback: 'blocking', // Allow for custom handling of 404-like cases
   }
 }
