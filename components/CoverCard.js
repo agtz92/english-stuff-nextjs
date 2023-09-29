@@ -7,7 +7,7 @@ import {
   Chip,
 } from "@mui/material"
 
-const CoverCard = ({ post, height }) => {
+const CoverCard = ({ post, height, h1 }) => {
   return (
     <Card
       sx={{
@@ -59,7 +59,7 @@ const CoverCard = ({ post, height }) => {
         }}
       >
         {/* Card Content */}
-        <h1>{post.title}</h1>
+        <h1 style={{fontSize: h1 ? h1 : "1.5em"}}>{post.title}</h1>
         <Chip
           label={post.categoria}
         />
