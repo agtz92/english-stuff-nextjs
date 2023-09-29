@@ -33,7 +33,7 @@ const SEOBlog = ({ post }) => {
           "@id":\"${sitename}\"
         },
         "headline": \"${post.title}\",
-        "description": \"${post.shortDescription}\",
+        "description": \"${generateExcerpt(post.shortDescription, 250)}\",
         "image": "${sitedomain}/assets/${post.featuredimage}",  
         "author": {
           "@type": "Organization",
