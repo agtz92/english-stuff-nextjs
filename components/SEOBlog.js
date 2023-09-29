@@ -13,16 +13,19 @@ const SEOBlog = ({ post }) => {
         // Ensure the last word isn't cut off
         const lastSpaceIndex = trimmedText.lastIndexOf(" ")
         if (lastSpaceIndex !== -1) {
-          return trimmedText.substring(0, lastSpaceIndex).replaceAll("^\"|\"$", "") + "..."
+          return (
+            trimmedText.substring(0, lastSpaceIndex).replace(/[^\w\s.]/g, '') +
+            "..."
+          )
         } else {
-          return trimmedText.replaceAll("^\"|\"$", "")  + "..."
+          return trimmedText.replace(/[^\w\s.]/g, '') + "..."
         }
       }
     } else {
       return ""
     }
   }
-
+  console.log("description: ", generateExcerpt(post.shortDescription, 250))
   function addProductJsonLd() {
     return {
       __html: `{
@@ -51,7 +54,7 @@ const SEOBlog = ({ post }) => {
         "dateModified": \"${post.date}\"
       }
   `,
-    };
+    }
   }
   return (
     <Head>
@@ -64,10 +67,10 @@ const SEOBlog = ({ post }) => {
         content={generateExcerpt(post.shortDescription, 250)}
       />
       <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={addProductJsonLd()}
-          key="product-jsonld"
-        />
+        type="application/ld+json"
+        dangerouslySetInnerHTML={addProductJsonLd()}
+        key="product-jsonld"
+      />
     </Head>
   )
 }
