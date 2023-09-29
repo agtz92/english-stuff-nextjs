@@ -34,7 +34,9 @@ const LargeCard = ({ post, height }) => {
       }}
     >
       <CardContent>
-        <h1 style={{height:'6em', fontSize:'1.2em', fontWeight:'600'}}>{post.title}</h1>
+        <h1 style={{ height: "6em", fontSize: "1.2em", fontWeight: "600" }}>
+          {post.title}
+        </h1>
         <div className="featuredimage-wrapper ">
           <Image
             className="featuredimg"
@@ -45,7 +47,9 @@ const LargeCard = ({ post, height }) => {
         </div>
         <Chip sx={{ marginTop: 1 }} label={post.categoria} />
 
-        <p>{generateExcerpt(post.shortDescription, 150)}</p>
+        <p style={{ fontWeight: 300, color: "#595758" }}>
+          {generateExcerpt(post.shortDescription, 150)}
+        </p>
       </CardContent>
     </Card>
   )

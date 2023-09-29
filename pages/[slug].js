@@ -7,6 +7,8 @@ import rehypeRaw from "rehype-raw"
 import Box from "@mui/material/Box"
 import { Chip, Grid } from "@mui/material"
 import Link from "next/link"
+import { sitename } from "../components/siteData"
+import SEOBlog from "@/components/SEOBlog"
 
 export default function Blog({ frontmatter, markdown, isMobile }) {
   // Format the ISO date for display in the desired locale
@@ -28,9 +30,7 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
 
   return (
     <div>
-      <Head>
-        <title>Demo Blog | {frontmatter.title}</title>
-      </Head>
+      <SEOBlog post={frontmatter} />
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -57,7 +57,7 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           Updated: {formattedDate}
         </span>
         <Box sx={{ minHeight: "40px" }} />
-        <Box justifyContent={'center'}  display={'flex'}>
+        <Box justifyContent={"center"} display={"flex"}>
           <div className="postimage-wrapper">
             <Image
               className="postimg"
@@ -118,8 +118,18 @@ export async function getStaticProps({ params: { slug } }) {
     // Format the date using the "es-MX" locale
     const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US")
 
+    // Ensure shortDescription is defined for each blog
+    const shortDescription = frontmatter["short-description"]
+
     return {
-      props: { frontmatter: { ...frontmatter, date: formattedDate }, markdown },
+      props: {
+        frontmatter: {
+          ...frontmatter,
+          date: formattedDate,
+          shortDescription: shortDescription,
+        },
+        markdown,
+      },
     }
   } catch (error) {
     console.error("Error reading file or parsing frontmatter:", error)
