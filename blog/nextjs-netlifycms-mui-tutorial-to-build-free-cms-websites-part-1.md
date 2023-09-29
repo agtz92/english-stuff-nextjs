@@ -181,6 +181,7 @@ mk4: >-
     
     export default index
 
+
     
   ```
 
@@ -267,8 +268,6 @@ mk5: >-
   > a Tenderloin in a blockquote
 
   ```
-
-
 
 
   Now before anything else, you need to install a library that allows your project to read md files
@@ -384,7 +383,12 @@ mk5: >-
       }
     
     }
-
   ```
+
+
+  ### C﻿ontinue this tutorial here: 
+
+
+  **Part 2 of the tutorial:** Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 2
 ---
 H﻿ave a great day!
