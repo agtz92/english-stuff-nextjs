@@ -72,12 +72,12 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           sx={{ marginTop: !isMobile ? 1 : 2}}
         >
           {frontmatter.tags?.map((tag) => (
-            <Grid key={tag} item xs={3} md={1}>
+            <Grid key={tag} item xs={3} sm={3} md={1.5}>
               <Chip
                 component={Link}
                 href={`/tags/${cleanAndLowercaseString(tag)}`}
                 label={tag}
-                sx={{ marginRight: 1, marginBottom: !isMobile ? 0 : 2 }}
+                sx={{ marginRight: 1, marginBottom: !isMobile ? 0 : 2, width:'100%' }}
                 clickable
               />
             </Grid>
