@@ -53,7 +53,7 @@ const SEOBlog = ({ post }) => {
                     "name": "3 min read",
                     "logo": {
                       "@type": "ImageObject",
-                      "url": \"${sitedomain}/${logo}\"
+                      "url": \"${sitedomain}/assets/logo.png\"
                     }
                   },
                   "datePublished": \"${post.date}\",
