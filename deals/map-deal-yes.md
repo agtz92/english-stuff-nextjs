@@ -1,0 +1,4 @@
+---
+deal: Yes
+deals: Yes
+---

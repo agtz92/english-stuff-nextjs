@@ -37,7 +37,7 @@ collections:
   
   - name: deals
     label: Deals
-    folder: cms/deals
+    folder: deals
     create: true
     slug: "{{slug}}"
     fields:
