@@ -13,9 +13,9 @@ const SEOBlog = ({ post }) => {
         // Ensure the last word isn't cut off
         const lastSpaceIndex = trimmedText.lastIndexOf(" ")
         if (lastSpaceIndex !== -1) {
-          return trimmedText.substring(0, lastSpaceIndex) + "..."
+          return trimmedText.substring(0, lastSpaceIndex).replaceAll("^\"|\"$", "") + "..."
         } else {
-          return trimmedText + "..."
+          return trimmedText.replaceAll("^\"|\"$", "")  + "..."
         }
       }
     } else {
