@@ -16,7 +16,7 @@ a link {
   text-decoration: none;
 }
 .MuiChip-root {
-  background-color: #663399;
+  background-color: #663399 !important;
   color: #fff;
   font-weight: 600;
 }
