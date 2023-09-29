@@ -57,27 +57,29 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           Updated: {formattedDate}
         </span>
         <Box sx={{ minHeight: "40px" }} />
-        <div className="postimage-wrapper">
-          <Image
-            className="postimg"
-            src={frontmatter.featuredimage}
-            alt={frontmatter.title}
-            fill
-          />
-        </div>
+        <Box justifyContent={'center'}  display={'flex'}>
+          <div className="postimage-wrapper">
+            <Image
+              className="postimg"
+              src={frontmatter.featuredimage}
+              alt={frontmatter.title}
+              fill
+            />
+          </div>
+        </Box>
 
-        <Grid
-          container
-          spacing={2}
-          sx={{ marginTop: !isMobile ? 1 : 2}}
-        >
+        <Grid container spacing={2} sx={{ marginTop: !isMobile ? 1 : 2 }}>
           {frontmatter.tags?.map((tag) => (
             <Grid key={tag} item xs={3} sm={3} md={1.5}>
               <Chip
                 component={Link}
                 href={`/tags/${cleanAndLowercaseString(tag)}`}
                 label={tag}
-                sx={{ marginRight: 1, marginBottom: !isMobile ? 0 : 2, width:'100%' }}
+                sx={{
+                  marginRight: 1,
+                  marginBottom: !isMobile ? 0 : 2,
+                  width: "100%",
+                }}
                 clickable
               />
             </Grid>
