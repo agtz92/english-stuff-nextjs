@@ -142,13 +142,16 @@ export async function getStaticProps({ params: { slug } }) {
 export async function getStaticPaths() {
   const filesInProjects = fs.readdirSync("./blog")
 
-  const paths = filesInProjects.map((file) => {
-    const filename = file.slice(0, file.indexOf("."))
-    return { params: { slug: filename } }
-  })
+  const paths = filesInProjects
+    .filter((file) => !file.startsWith(".")) // Filter out hidden files
+    .map((file) => {
+      const filename = file.slice(0, file.indexOf("."))
+      return { params: { slug: filename } }
+    })
 
   return {
     paths,
     fallback: false, // This shows a 404 page if the page is not found
   }
 }
+

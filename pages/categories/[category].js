@@ -18,7 +18,9 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
       sx={{ marginLeft: !isMobile ? 20 : 5, marginRight: !isMobile ? 20 : 5 }}
     >
       <Head>
-        <title>{sitename} | {category}</title>
+        <title>
+          {sitename} | {category}
+        </title>
       </Head>
       <h1 style={{ textAlign: "center", fontWeight: 600 }}>
         {category.toUpperCase()}
@@ -37,7 +39,8 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
   )
 }
 
-export async function getStaticProps({ params: { category } }) {
+export async function getStaticProps({ params }) {
+  const { category } = params
   try {
     const categorySlug = category.toLowerCase()
     const files = fs.readdirSync("./blog")
@@ -78,19 +81,21 @@ export async function getStaticProps({ params: { category } }) {
     }
   }
 }
-
 export async function getStaticPaths() {
-  const files = fs.readdirSync("./blog")
+  const files = fs.readdirSync("./categories")
   const categories = new Set()
 
   for (const file of files) {
-    const fileContent = matter(
-      fs.readFileSync(path.join("./blog", file), "utf8")
-    )
-    const frontmatter = fileContent.data
+    // Check if the file is not hidden (doesn't start with a dot)
+    if (!file.startsWith(".")) {
+      const fileContent = matter(
+        fs.readFileSync(path.join("./categories", file), "utf8")
+      )
+      const frontmatter = fileContent.data
 
-    if (frontmatter.categoria) {
-      categories.add(frontmatter.categoria.toLowerCase())
+      if (frontmatter.categoria) {
+        categories.add(frontmatter.categoria.toLowerCase())
+      }
     }
   }
 
@@ -100,6 +105,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true, // Allow for custom handling of 404-like cases
+    fallback: false, // Allow for custom handling of 404-like cases
   }
 }
