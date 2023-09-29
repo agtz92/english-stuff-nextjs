@@ -17,7 +17,7 @@ a link {
 }
 .MuiChip-root {
   background-color: #663399 !important;
-  color: #fff;
+  color: #fff !important;
   font-weight: 600;
 }
 .MuiChip-root:hover {
