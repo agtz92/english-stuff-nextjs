@@ -5,7 +5,7 @@ import Head from "next/head"
 import Image from "next/image"
 import rehypeRaw from "rehype-raw"
 import Box from "@mui/material/Box"
-import { Chip } from "@mui/material"
+import { Chip, Grid } from "@mui/material"
 import Link from "next/link"
 
 export default function Blog({ frontmatter, markdown, isMobile }) {
@@ -57,33 +57,32 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           Updated: {formattedDate}
         </span>
         <Box sx={{ minHeight: "40px" }} />
-        <div className="featuredimage-wrapper">
+        <div className="postimage-wrapper">
           <Image
-            className="featuredimg"
+            className="postimg"
             src={frontmatter.featuredimage}
             alt={frontmatter.title}
             fill
           />
         </div>
-        <Box
-          display={"flex"}
-          flexDirection={!isMobile ? "row" : "column"}
-          justifyContent={isMobile ? "left": "left"}
-          alignContent={isMobile ? "left": "center"}
-          alignItems={"flex-start"}
-          sx={{ marginBottom: !isMobile ? 2 : 5, marginTop: !isMobile ? 2 : 5 }}
+
+        <Grid
+          container
+          spacing={2}
+          sx={{ marginTop: !isMobile ? 1 : 2}}
         >
           {frontmatter.tags?.map((tag) => (
-            <Chip
-              key={tag}
-              component={Link}
-              href={`/tags/${cleanAndLowercaseString(tag)}`}
-              label={tag}
-              sx={{ marginRight: 1, marginBottom: !isMobile ? 0 : 2 }}
-              clickable
-            />
+            <Grid key={tag} item xs={3} md={1}>
+              <Chip
+                component={Link}
+                href={`/tags/${cleanAndLowercaseString(tag)}`}
+                label={tag}
+                sx={{ marginRight: 1, marginBottom: !isMobile ? 0 : 2 }}
+                clickable
+              />
+            </Grid>
           ))}
-        </Box>
+        </Grid>
 
         <Box display={"flex"} flexDirection={"column"} className="content">
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
