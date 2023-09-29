@@ -22,6 +22,37 @@ const SEOBlog = ({ post }) => {
       return ""
     }
   }
+
+  function addProductJsonLd() {
+    return {
+      __html: `{
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id":\"${sitename}\"
+        },
+        "headline": \"${post.title}\",
+        "description": \"${post.shortDescription}\",
+        "image": "${sitedomain}/assets/${post.featuredimage}",  
+        "author": {
+          "@type": "Organization",
+          "name": "3minread.com"
+        },  
+        "publisher": {
+          "@type": "Organization",
+          "name": "3 min read",
+          "logo": {
+            "@type": "ImageObject",
+            "url": \"${sitedomain}/assets/logo.png\"
+          }
+        },
+        "datePublished": \"${post.date}\",
+        "dateModified": \"${post.date}\"
+      }
+  `,
+    };
+  }
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -32,35 +63,11 @@ const SEOBlog = ({ post }) => {
         name="description"
         content={generateExcerpt(post.shortDescription, 250)}
       />
-      <script type="application/ld+json">
-        {`
-                {
-                  "@context": "https://schema.org",
-                  "@type": "BlogPosting",
-                  "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id":\"${sitename}\"
-                  },
-                  "headline": \"${post.title}\",
-                  "description": \"${post.shortDescription}\",
-                  "image": "${sitedomain}/assets/${post.featuredimage}",  
-                  "author": {
-                    "@type": "Organization",
-                    "name": "3minread.com"
-                  },  
-                  "publisher": {
-                    "@type": "Organization",
-                    "name": "3 min read",
-                    "logo": {
-                      "@type": "ImageObject",
-                      "url": \"${sitedomain}/assets/logo.png\"
-                    }
-                  },
-                  "datePublished": \"${post.date}\",
-                  "dateModified": \"${post.date}\"
-                }
-                `}
-      </script>
+      <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addProductJsonLd()}
+          key="product-jsonld"
+        />
     </Head>
   )
 }
