@@ -22,9 +22,29 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
           {sitename} | {category}
         </title>
       </Head>
-      <h1 style={{ textAlign: "center", fontWeight: 600 }}>
-        {category.toUpperCase()}
-      </h1>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        sx={{
+          borderBottom: "1px solid #663399",
+          marginBottom: 5,
+          marginLeft: !isMobile ? 20 : 0,
+          marginRight: !isMobile ? 20 : 0,
+        }}
+      >
+        <h3
+          style={{
+            fontSize: "1.5em",
+            fontWeight: 600,
+            textAlign: "center",
+            letterSpacing: "2px",
+          }}
+        >
+            {category.toUpperCase()}
+        </h3>
+      </Box>
 
       <Grid container spacing={2}>
         {sortedBlogs?.map((file, index) => (
@@ -105,6 +125,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking', // Allow for custom handling of 404-like cases
+    fallback: "blocking", // Allow for custom handling of 404-like cases
   }
 }

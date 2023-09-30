@@ -23,13 +23,39 @@ export default function Home({ blogs, isMobile }) {
       <Head>
         <title>{sitename}</title>
       </Head>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        sx={{
+          borderBottom: "1px solid #663399",
+          marginBottom: 5,
+          marginLeft: !isMobile ? 20 : 0,
+          marginRight: !isMobile ? 20 : 0,
+        }}
+      >
+        <h3
+          style={{
+            fontSize: "1.5em",
+            fontWeight: 600,
+            textAlign: "center",
+            letterSpacing: "2px",
+          }}
+        >
+          NEWEST POSTS
+        </h3>
+      </Box>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Grid container spacing={2}>
             {first.map((blog) => (
               <Grid key={blog.slug} item xs={12} md={12}>
                 <Link href={`/${blog.slug}`}>
-                  <CoverCard post={blog} height="620px" />
+                  <CoverCard
+                    post={blog}
+                    height={!isMobile ? "620px" : "300px"}
+                  />
                 </Link>
               </Grid>
             ))}
@@ -66,11 +92,10 @@ export default function Home({ blogs, isMobile }) {
         sx={{
           borderBottom: "1px solid #663399",
           marginTop: 5,
-          marginLeft: !isMobile ? 20: 0,
-          marginRight: !isMobile ? 20: 0,
+          marginLeft: !isMobile ? 20 : 0,
+          marginRight: !isMobile ? 20 : 0,
         }}
       >
-        
         <h3
           style={{
             fontSize: "1.5em",
@@ -86,7 +111,7 @@ export default function Home({ blogs, isMobile }) {
         {deals.map((blog) => (
           <Grid key={blog.slug} item xs={12} md={3}>
             <Link href={`/${blog.slug}`}>
-              <CoverCard post={blog}  height={'200px'} h1='1rem'/>
+              <CoverCard post={blog} height={"200px"} h1="1rem" />
             </Link>
           </Grid>
         ))}
@@ -99,11 +124,10 @@ export default function Home({ blogs, isMobile }) {
         sx={{
           borderBottom: "1px solid #663399",
           marginTop: 5,
-          marginLeft: !isMobile ? 20: 0,
-          marginRight: !isMobile ? 20: 0,
+          marginLeft: !isMobile ? 20 : 0,
+          marginRight: !isMobile ? 20 : 0,
         }}
       >
-        
         <h3
           style={{
             fontSize: "1.5em",
