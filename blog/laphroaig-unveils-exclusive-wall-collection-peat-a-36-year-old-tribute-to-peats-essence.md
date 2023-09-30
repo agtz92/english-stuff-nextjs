@@ -47,10 +47,12 @@ mk4: >-
   * Taste: Sweet, featuring notes of zesty orange peel, pineapple, runny honey, vanilla, custard tart, and a subtle marzipan finish.
 
   * Finish: Sweet and smooth, with a lingering signature peat character.
-mk5: This remarkable expression is an exceedingly limited release, with only 200
-  bottles in existence. It will be available through a ballot on Laphroaig's
+mk5: "* This remarkable expression is an exceedingly limited release, with only
+  200 bottles in existence. It will be available through a ballot on Laphroaig's
   website from October 12th to 16th, as well as select specialty retailers. The
   retail price for this masterpiece is £4,500 GBP (or US$5,486). Don't miss your
-  chance to savor this exceptional ode to peat's enduring allure.
+  chance to savor this exceptional ode to peat's enduring allure. You can see
+  the [laphroaig ballot
+  here](https://www.laphroaig.com/en-gb/whiskies/the-wall-collection)"
 ---
 Hagd
