@@ -44,23 +44,31 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} md={4} display={"flex"} direction={"column"}>
           <h4>Partners</h4>
-          <Link href="https://www.corthw.com/topes-para-anden">
+          <Link href="https://www.corthw.com/topes-para-anden" target="_blank">
             Cortinas Hawaianas y Topes para Anden
           </Link>
-          <Link href="https://www.antesdelexamen.com/categorias/preguntas-de-examen/">
+          <Link
+            href="https://www.antesdelexamen.com/categorias/preguntas-de-examen/"
+            target="_blank"
+          >
             Preguntas de examen UNAM
           </Link>
-          <Link href="https://www.matmarkt.com/productos/gimnasios">
+          <Link
+            href="https://www.matmarkt.com/productos/gimnasios"
+            target="_blank"
+          >
             Piso para gimnasios
           </Link>
-          <Link href="https://www.sombrealo.com/">
+          <Link href="https://www.sombrealo.com/" target="_blank">
             Velarias Arquitectonicas Queretaro
           </Link>
-          <Link href="https://www.soy-nuevo.com/">
+          <Link href="https://www.soy-nuevo.com/" target="_blank">
             Cazador de Ofertas para Productos de Bebés como Safety 1st, Doona,
             Uppababy y más!
           </Link>
-          <Link href="https://www.10datos.com">Noticias de gaming</Link>
+          <Link href="https://www.10datos.com" target="_blank">
+            Noticias de gaming
+          </Link>
         </Grid>
         <Grid item xs={12} md={12}>
           <p style={{ width: "100%", textAlign: "center" }}>{sitename} 2023</p>
