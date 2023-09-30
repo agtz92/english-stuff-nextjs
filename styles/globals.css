@@ -238,4 +238,9 @@ h3 {
     min-height: 300px;
     max-height: 300px;
   }
+  .footer li {
+    list-style-type: none;
+    color: #000 !important;
+    margin-top: 15px;
+  }
 }
