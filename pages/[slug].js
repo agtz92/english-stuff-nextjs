@@ -87,6 +87,8 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
         </Grid>
 
         <Box display={"flex"} flexDirection={"column"} className="content">
+          <Box sx={{ minHeight: "20px" }} />
+          {frontmatter.shortDescription}
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk1}
           </ReactMarkdown>
@@ -151,7 +153,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking', // This shows a 404 page if the page is not found
+    fallback: "blocking", // This shows a 404 page if the page is not found
   }
 }
-
