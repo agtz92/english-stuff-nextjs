@@ -29,7 +29,7 @@ mk1: >-
 
   * Optimizing SEO and performance for a stellar user experience
 
-    **Part 2 of the tutorial:** Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 2
+    **Part 2 of the tutorial:** Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 2 (coming soon)
 
   Join us as we empower you with the skills and knowledge to create dynamic, content-driven websites that you can manage with ease. Say goodbye to costly CMS solutions and hello to the future of web development! 💻🌐
 
@@ -180,6 +180,7 @@ mk4: >-
     }
     
     export default index
+
 
 
 
@@ -411,12 +412,15 @@ mk5: >-
   A﻿fter that, you'll be displaying your very own blog post dinamically!
 
 
-  ![](/assets/captura-de-pantalla-2023-10-02-131355.png)
+  ![Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 1](/assets/captura-de-pantalla-2023-10-02-131355.png "Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 1")
 
 
   ### C﻿ontinue this tutorial here:
 
 
-  **Part 2 of the tutorial:** Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 2
+  **Part 2 of the tutorial:** Nextjs + NetlifyCMS + MUI Tutorial to Build Free CMS Websites Part 2 
+
+
+  * (coming soon)
 ---
 H﻿ave a great day!
