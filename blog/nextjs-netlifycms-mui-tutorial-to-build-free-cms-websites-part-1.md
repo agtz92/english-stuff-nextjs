@@ -183,6 +183,7 @@ mk4: >-
 
 
 
+
     
   ```
 
@@ -405,6 +406,12 @@ mk5: >-
     
     }
   ```
+
+
+  A﻿fter that, you'll be displaying your very own blog post dinamically!
+
+
+  ![](/assets/captura-de-pantalla-2023-10-02-131355.png)
 
 
   ### C﻿ontinue this tutorial here:
