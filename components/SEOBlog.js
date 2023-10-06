@@ -56,11 +56,12 @@ const SEOBlog = ({ post }) => {
   `,
     }
   }
+  const title = post.title + " | " + sitename
   return (
     <Head>
       <meta charSet="utf-8" />
       <title>
-        {post.title} | {sitename}
+        {title}
       </title>
       <meta
         name="description"

@@ -23,6 +23,8 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
   useEffect(() => {
     setCurrentPage(1)
   }, [category])
+
+  const title = sitename + " | " + category
   
   return (
     <Box
@@ -30,7 +32,7 @@ export default function CategoryPage({ matchingFiles, category, isMobile }) {
     >
       <Head>
         <title>
-          {sitename} | {category}
+          {title}
         </title>
       </Head>
       <Box
