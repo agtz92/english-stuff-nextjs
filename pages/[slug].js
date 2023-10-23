@@ -31,14 +31,7 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
   return (
     <div>
       <SEOBlog post={frontmatter} />
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        sx={{
-          paddingLeft: !isMobile ? 40 : 5,
-          paddingRight: !isMobile ? 40 : 5,
-        }}
-      >
+      <Box display={"flex"} flexDirection={"column"} className="margins5">
         <h1 style={{ fontSize: "3em", margin: 0 }}>{frontmatter.title}</h1>
         <Box
           display={"flex"}
@@ -64,11 +57,13 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
               src={frontmatter.featuredimage}
               alt={frontmatter.title}
               fill
+              placeholder="blur"
+              blurDataURL="../public/assets/blur.jpg"
             />
           </div>
         </Box>
 
-        <Grid container spacing={2} sx={{ marginTop: !isMobile ? 1 : 2 }}>
+        <Grid container spacing={2} sx={{ marginTop: 2 }}>
           {frontmatter.tags?.map((tag) => (
             <Grid key={tag} item xs={3} sm={3} md={1.5}>
               <Chip
@@ -77,7 +72,7 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
                 label={tag}
                 sx={{
                   marginRight: 1,
-                  marginBottom: !isMobile ? 0 : 2,
+                  marginBottom: 2,
                   width: "100%",
                 }}
                 clickable

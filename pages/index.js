@@ -1,12 +1,14 @@
 import fs from "fs"
+import dynamic from 'next/dynamic'
 import matter from "gray-matter"
 import Link from "next/link"
 import Head from "next/head"
-import { Box, Grid } from "@mui/material"
-import LargeCard from "@/components/LargeCard"
+import  Grid  from "@mui/material/Grid"
+import Box from "@mui/material/Box"
+//import LargeCard from "@/components/LargeCard"
 import { sitename } from "../components/siteData"
 import CoverCard from "@/components/CoverCard"
-import TextCard from "@/components/TextCard"
+//import TextCard from "@/components/TextCard"
 
 export default function Home({ blogs, isMobile }) {
   // Sort the blogs by date in descending order
@@ -15,10 +17,14 @@ export default function Home({ blogs, isMobile }) {
   const nextTwo = sortedBlogs.slice(1, 3)
   const nextFour = sortedBlogs.slice(3, 7)
   const daRest = sortedBlogs.slice(7, 15)
+  const TextCard = dynamic(() => import('@/components/TextCard'))
+  const LargeCard = dynamic(() => import('@/components/LargeCard'))
+  
+  
   const deals = sortedBlogs.filter((blog) => blog.deals === "Yes")
   return (
     <Box
-      sx={{ marginLeft: !isMobile ? 20 : 5, marginRight: !isMobile ? 20 : 5 }}
+      className='margins5'
     >
       <Head>
         <title>{sitename}</title>
@@ -29,11 +35,10 @@ export default function Home({ blogs, isMobile }) {
         justifyContent={"center"}
         alignItems={"center"}
         sx={{
-          borderBottom: "1px solid #663399",
+          borderBottom: "1px solid #d80032",
           marginBottom: 5,
-          marginLeft: !isMobile ? 20 : 0,
-          marginRight: !isMobile ? 20 : 0,
         }}
+        className='margins'
       >
         <h3
           style={{
@@ -54,7 +59,6 @@ export default function Home({ blogs, isMobile }) {
                 <Link href={`/${blog.slug}`}>
                   <CoverCard
                     post={blog}
-                    height={!isMobile ? "620px" : "300px"}
                   />
                 </Link>
               </Grid>
@@ -66,7 +70,7 @@ export default function Home({ blogs, isMobile }) {
             {nextTwo.map((blog) => (
               <Grid key={blog.slug} item xs={12} md={12}>
                 <Link href={`/${blog.slug}`}>
-                  <CoverCard post={blog} height="300px" />
+                  <CoverCard post={blog} secondary/>
                 </Link>
               </Grid>
             ))}
@@ -92,9 +96,8 @@ export default function Home({ blogs, isMobile }) {
         sx={{
           borderBottom: "1px solid #663399",
           marginTop: 5,
-          marginLeft: !isMobile ? 20 : 0,
-          marginRight: !isMobile ? 20 : 0,
         }}
+        className='margins'
       >
         <h3
           style={{
@@ -124,9 +127,8 @@ export default function Home({ blogs, isMobile }) {
         sx={{
           borderBottom: "1px solid #663399",
           marginTop: 5,
-          marginLeft: !isMobile ? 20 : 0,
-          marginRight: !isMobile ? 20 : 0,
         }}
+        className='margins'
       >
         <h3
           style={{
