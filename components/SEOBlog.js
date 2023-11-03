@@ -1,7 +1,6 @@
 import Head from "next/head"
 import React from "react"
 import { sitename, sitedomain } from "./siteData"
-import logo from "../public/assets/logo.png"
 
 const SEOBlog = ({ post }) => {
   function generateExcerpt(text, maxLength) {
@@ -14,18 +13,21 @@ const SEOBlog = ({ post }) => {
         const lastSpaceIndex = trimmedText.lastIndexOf(" ")
         if (lastSpaceIndex !== -1) {
           return (
-            trimmedText.substring(0, lastSpaceIndex).replace(/[^\w\s.]/g, '') +
+            trimmedText.substring(0, lastSpaceIndex).replace(/[^\w\s.]/g, "") +
             "..."
           )
         } else {
-          return trimmedText.replace(/[^\w\s.]/g, '') + "..."
+          return trimmedText.replace(/[^\w\s.]/g, "") + "..."
         }
       }
     } else {
       return ""
     }
   }
-  console.log("description: ", generateExcerpt(post.shortDescription, 250))
+  function removeDoubleQuotes(inputString) {
+    // Use a regular expression to replace all double quotes with an empty string
+    return inputString.replace(/"/g, '');
+  }
   function addProductJsonLd() {
     return {
       __html: `{
@@ -35,16 +37,16 @@ const SEOBlog = ({ post }) => {
           "@type": "WebPage",
           "@id":\"${sitename}\"
         },
-        "headline": \"${post.title}\",
+        "headline": \"${removeDoubleQuotes(post.title)}\",
         "description": \"${generateExcerpt(post.shortDescription, 250)}\",
         "image": "${sitedomain}/assets/${post.featuredimage}",  
         "author": {
           "@type": "Organization",
-          "name": "3minread.com"
+          "name": "${sitedomain}"
         },  
         "publisher": {
           "@type": "Organization",
-          "name": "3 min read",
+          "name": "${sitename}",
           "logo": {
             "@type": "ImageObject",
             "url": \"${sitedomain}/assets/logo.png\"
@@ -61,7 +63,7 @@ const SEOBlog = ({ post }) => {
     <Head>
       <meta charSet="utf-8" />
       <title>
-        {title}
+        {removeDoubleQuotes(title)}
       </title>
       <meta
         name="description"
