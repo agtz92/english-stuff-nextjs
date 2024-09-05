@@ -1,5 +1,5 @@
 ---
-title: Pulled Pork on a Weber Smokey Mountain
+title: Pulled Pork on a Weber Smokey Mountain CH
 date: 2024-02-23T21:32:54.656Z
 featuredimage: /assets/img_5874.jpeg
 categoria: Lifestyle
