@@ -1,28 +1,32 @@
 ---
-title: "MEXC to Participate in VTIS 2024: Expanding Its Reach in Vietnam"
-date: 2024-11-30T00:55:31.166Z
-featuredimage: https://crypto.news/app/uploads/2024/09/crypto-news-event-option01-1380x820.webp
+title: "Bizarre AI Experiment Goes Viral: iDEGEN’s Presale Price Soars 17,991%"
+date: 2024-11-30T00:56:41.543Z
+featuredimage: https://crypto.news/app/uploads/2024/02/crypto-news-BlockDAG-launching-2m-giveaway-as-Meme-Kombat-hits-0.279-in-presale03.webp
 categoria: Business
 deals: No
 tags:
-  - "#MEXC"
-  - "#Blockchain"
-  - "#Vietnam"
-short-description: MEXC announces its participation in the Vietnam Tech Impact
-  Summit (VTIS) 2024, aiming to strengthen its presence in the Vietnamese market
-  and deepen collaborations with key opinion leaders (KOLs) in blockchain and
-  cryptocurrency.
+  - "#iDEGEN"
+  - "#AI"
+  - "#MemeCoin"
+short-description: iDEGEN, a provocative AI-powered meme coin on Solana, has
+  taken the crypto world by storm, combining unrestrained AI antics with
+  unprecedented price growth, redefining the meme coin landscape.
 mk1: >-
   <!--StartFragment-->
 
 
-  ### MEXC at VTIS 2024
+  ![iDEGEN](https://crypto.news/app/uploads/2024/11/Content-Media-Bank-Image4-1024x574.png.webp "iDEGEN")
 
 
-  **Showcasing innovation at a premier tech summit**
+  ### What is iDEGEN?
 
 
-  From December 3-4, 2024, MEXC will join industry leaders at VTIS 2024 in Hanoi, Vietnam. Co-hosted by Vietnam Securities Group (SSI) and fintech company FPT, the summit will spotlight advancements in AI, fintech, blockchain, and gaming, providing MEXC a platform to showcase its capabilities and engage with the local crypto community.
+
+
+  **AI meets chaos in the crypto world**
+
+
+  iDEGEN is an autonomous AI agent powered by Solana and trained solely on the eccentric ramblings of crypto degens. Operating without filters or moderation, it tweets every hour, reflecting the wild, unpredictable nature of its community. This unrestrained approach has garnered significant attention, propelling its presale price up 17,991%.
 
 
   <!--EndFragment-->
@@ -30,16 +34,13 @@ mk2: >-
   <!--StartFragment-->
 
 
-  ### Strengthening Local Connections
+  ### Why AI Meme Coins Are Dominating
 
 
-  ![MEXC](https://crypto.news/app/uploads/2024/11/Picture4_MEXC.jpg.webp "MEXC")
+  **The next big trend in crypto**
 
 
-  **Deepening ties with Vietnamese users and KOLs**
-
-
-  MEXC Vietnam has established strong relationships with KOLs, fostering direct communication with its growing user base. Through community-building events like "Bitcoin Pizza Day" and exclusive media initiatives such as the MEXConnect series, the platform has become a trusted name among Vietnamese crypto enthusiasts.
+  AI-powered meme coins are rapidly becoming a dominant force in the market, combining the massive appeal of artificial intelligence with the viral potential of memes. With AI crypto already commanding a $30 billion market cap and meme coins thriving in a $100 billion supercycle, iDEGEN is perfectly positioned to capitalize on this trend.
 
 
   <!--EndFragment-->
@@ -47,13 +48,13 @@ mk3: >-
   <!--StartFragment-->
 
 
-  ### Social Responsibility and Community Engagement
+  ### iDEGEN’s Innovative Auction Format
 
 
-  **Giving back to the community**
+  **A degen-friendly approach**
 
 
-  MEXC Vietnam supports charitable causes, donating essentials to local organizations during festive seasons and providing educational opportunities. These efforts underline MEXC’s commitment to building strong, sustainable connections with the Vietnamese community.
+  Unlike traditional presales, iDEGEN uses an adaptive auction where prices fluctuate based on market sentiment every five minutes. This dynamic pricing model ensures transparency and allows the market to dictate the token’s value. The token will launch on exchanges at the final auction price plus 10%, creating a fair entry point for traders.
 
 
   <!--EndFragment-->
@@ -61,25 +62,25 @@ mk4: >-
   <!--StartFragment-->
 
 
-  ### Opportunities at VTIS 2024
+  ### Viral Madness Equals Market Success
 
 
-  **Exploring partnerships and future growth**
+  **Attention drives growth**
 
 
-  Participation in VTIS 2024 will enable MEXC to network with industry leaders, forge new partnerships, and explore opportunities in Vietnam's rapidly evolving cryptocurrency sector. This marks another step in MEXC’s mission to democratize access to digital assets and empower users worldwide.
+  iDEGEN’s unmoderated, viral nature ensures constant buzz across social platforms. By leveraging community interaction and AI unpredictability, it has positioned itself as a must-watch project in the crypto space, with viral attention driving its meteoric rise.
 
 
   <!--EndFragment-->
 mk5: |-
   <!--StartFragment-->
 
-  MEXC
+  iDEGEN
 
   <!--EndFragment-->
 ---
 <!--StartFragment-->
 
-MEXC
+iDEGEN
 
 <!--EndFragment-->
