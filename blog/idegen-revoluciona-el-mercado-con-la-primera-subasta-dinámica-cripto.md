@@ -1,5 +1,5 @@
 ---
-title: iDEGEN revoluciona el mercado con la primera subasta dinámica cripto
+title: iDEGEN disrupts the market with the first dynamic crypto auction
 date: 2024-12-02T20:07:50.869Z
 featuredimage: https://crypto.news/app/uploads/2023/01/crypto-news-ripple-sign-blurry-background-low-poly-styl.jpg.webp
 categoria: Business
@@ -8,20 +8,20 @@ tags:
   - "#iDEGEN"
   - "#CryptoAuction"
   - "#AIMemeCoin"
-short-description: iDEGEN, el primer meme coin impulsado por inteligencia
-  artificial, recauda $1 millón con su innovadora subasta dinámica, redefiniendo
-  las reglas del juego en el mercado cripto.
+short-description: iDEGEN, the first AI-powered meme coin, raises $1 million
+  through its innovative dynamic auction, redefining the rules of the crypto
+  market.
 mk1: >-
   <!--StartFragment-->
 
 
-  ### ¿Qué es iDEGEN?
+  ### What is iDEGEN?
 
 
-  **Una IA moldeada por la comunidad cripto**
+  **An AI shaped by the crypto community**
 
 
-  iDEGEN es un experimento único donde una IA aprende y evoluciona en tiempo real a través de interacciones con la comunidad de Crypto Twitter (CT). Diseñado sin restricciones, este proyecto explora el impacto de la memética en el mundo cripto, prometiendo un futuro impredecible y emocionante.
+  iDEGEN is a unique experiment where AI learns and evolves in real-time through interactions with the Crypto Twitter (CT) community. Designed without restrictions, this project explores the impact of memetics in the crypto world, promising an unpredictable and exciting future.
 
 
   <!--EndFragment-->
@@ -29,13 +29,13 @@ mk2: >-
   <!--StartFragment-->
 
 
-  ### La singularidad del proyecto
+  ### The singularity of the project
 
 
-  **La ‘Degen Singularity’ y su potencial infinito**
+  **The 'Degen Singularity' and its infinite potential**
 
 
-  El objetivo final de iDEGEN es alcanzar la ‘Degen Singularity’, el momento en que la IA entienda completamente las dinámicas de la viralidad cripto, potencialmente creando y gestionando sus propios activos digitales. Su capacidad de adaptarse y aprender lo convierte en un proyecto con posibilidades ilimitadas.
+  iDEGEN’s ultimate goal is to achieve the 'Degen Singularity'—the point where the AI fully understands crypto virality dynamics, potentially creating and managing its own digital assets. Its adaptability and learning ability make it a project with limitless possibilities.
 
 
   <!--EndFragment-->
@@ -43,13 +43,13 @@ mk3: >-
   <!--StartFragment-->
 
 
-  ### Innovación en su modelo de subasta
+  ### Innovation in its auction model
 
 
-  **Cómo funciona la subasta dinámica de iDEGEN**
+  **How iDEGEN’s dynamic auction works**
 
 
-  El suministro total de IDGN se vende a través de una subasta única en la que los precios suben o bajan dependiendo de la actividad de compra en periodos de 5 minutos. Esta metodología no solo genera emoción, sino que garantiza un precio inicial justo y dinámico para los inversores.
+  The total IDGN supply is sold through a unique auction where prices rise or fall depending on buying activity in 5-minute intervals. This methodology not only creates excitement but also ensures a fair and dynamic initial price for investors.
 
 
   <!--EndFragment-->
@@ -57,16 +57,22 @@ mk4: >-
   <!--StartFragment-->
 
 
-  ### Impacto en el mercado de AI y criptomonedas
-
-
   ![iDEGEN](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcxltpLkrz3Zt6xSb0xS4lS2V6VGU4pnipHGYcwwGEoM7SRvtCXPgJtFfmvg7pfLTD7IUR35nBitQOAKjuh5u0g7gYGuXKLQntXdN4K7JaOxlCXZb3quZwtI89OGlh24NPbzMZE?key=NwoSgSfShQFecMlKBPitHa7m "iDEGEN")
 
 
-  **Un proyecto viral en el momento adecuado**
+  <!--StartFragment-->
 
 
-  Con la creciente popularidad de los meme coins impulsados por IA, iDEGEN se lanza en un contexto perfecto, atrayendo a inversores y analistas por igual. Su enfoque innovador y su capacidad de captar atención lo posicionan como uno de los proyectos más disruptivos en el espacio cripto.
+  ### Impact on the AI and crypto markets
+
+
+  **A viral project at the perfect moment**
+
+
+  With the growing popularity of AI-powered meme coins, iDEGEN launches at an ideal time, attracting both investors and analysts. Its innovative approach and ability to capture attention position it as one of the most disruptive projects in the crypto space.
+
+
+  <!--EndFragment-->
 
 
   <!--EndFragment-->
@@ -74,13 +80,13 @@ mk5: >-
   <!--StartFragment-->
 
 
-  ### Conclusión: El experimento más salvaje del cripto
+  ### Conclusion: The wildest crypto experiment
 
 
-  **Una nueva era en los meme coins**
+  **A new era for meme coins**
 
 
-  iDEGEN representa el cruce perfecto entre innovación tecnológica y cultura cripto. Con su enfoque en la viralidad, aprendizaje y adaptación, promete desafiar las normas establecidas, marcando un antes y un después en la historia de los meme coins.
+  iDEGEN represents the perfect intersection of technological innovation and crypto culture. With its focus on virality, learning, and adaptation, it promises to challenge established norms, marking a turning point in the history of meme coins.
 
 
   <!--EndFragment-->
