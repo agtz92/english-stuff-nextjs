@@ -1,5 +1,5 @@
 ---
-title: "El experimento viral de iDEGEN: la IA meme coin sube un 17991% en su preventa"
+title: "iDEGEN’s viral experiment: The AI meme coin surges 17991% in presale"
 date: 2024-12-02T20:10:43.612Z
 featuredimage: https://crypto.news/app/uploads/2024/02/crypto-news-BlockDAG-launching-2m-giveaway-as-Meme-Kombat-hits-0.279-in-presale03.webp
 categoria: Business
@@ -8,20 +8,20 @@ tags:
   - "#iDEGEN"
   - "#AIMemeCoin"
   - "#CryptoMadness"
-short-description: iDEGEN, el meme coin impulsado por inteligencia artificial y
-  basado en Solana, redefine el caos en el criptoespacio con publicaciones sin
-  filtro y ganancias astronómicas que están captando la atención global.
+short-description: iDEGEN, the AI-powered meme coin on Solana, redefines chaos
+  in the crypto space with unfiltered posts and astronomical gains, capturing
+  global attention.
 mk1: >-
   <!--StartFragment-->
 
 
-  ### iDEGEN: Una IA nacida del caos cripto
+  ### iDEGEN: An AI born from crypto chaos
 
 
-  **Un experimento sin restricciones ni límites**
+  **An experiment without restrictions or limits**
 
 
-  Creado como una IA de "pizarra en blanco", iDEGEN evoluciona a partir de las interacciones con la comunidad de Crypto Twitter (CT). Publicando cada hora sin moderación, la IA no solo refleja el caos del mundo cripto, sino que también lo amplifica, llevando el concepto de degen a un nuevo nivel.
+  Created as a "blank slate" AI, iDEGEN evolves through interactions with the Crypto Twitter (CT) community. Posting every hour without moderation, the AI not only reflects the chaos of the crypto world but amplifies it, elevating the degen concept to new heights.
 
 
   <!--EndFragment-->
@@ -29,13 +29,13 @@ mk2: >-
   <!--StartFragment-->
 
 
-  ### Por qué los memes impulsados por IA son la tendencia dominante
+  ### Why AI-powered memes are the dominant trend
 
 
-  **Una combinación perfecta para la era cripto actual**
+  **A perfect combination for the current crypto era**
 
 
-  El auge de las criptomonedas basadas en IA y memes es inevitable. Con un mercado que supera los $5 mil millones, estos híbridos están marcando tendencia. iDEGEN, junto con otros nombres destacados como Goatseus Maximus, lidera el camino en una industria que fusiona creatividad, tecnología y viralidad.
+  The rise of AI and meme-based cryptocurrencies is inevitable. With a market surpassing $5 billion, these hybrids are setting trends. iDEGEN, along with other notable names like Goatseus Maximus, leads an industry that fuses creativity, technology, and virality.
 
 
   <!--EndFragment-->
@@ -43,13 +43,13 @@ mk3: >-
   <!--StartFragment-->
 
 
-  ### Subastas avanzadas: Un sueño para los degens
+  ### Advanced auctions: A dream for degens
 
 
-  **Un modelo de preventa adaptativo e innovador**
+  **An innovative and adaptive presale model**
 
 
-  En lugar de una preventa tradicional, iDEGEN utiliza una subasta dinámica donde los precios cambian cada 5 minutos según la actividad del mercado. Este formato no solo elimina precios arbitrarios, sino que asegura que el valor del token refleje fielmente la demanda del mercado.
+  Instead of a traditional presale, iDEGEN uses a dynamic auction where prices change every 5 minutes based on market activity. This format not only eliminates arbitrary pricing but ensures the token's value reflects true market demand.
 
 
   <!--EndFragment-->
@@ -57,13 +57,13 @@ mk4: >-
   <!--StartFragment-->
 
 
-  ### El impacto viral de iDEGEN: Más allá de las expectativas
+  ### iDEGEN’s viral impact: Beyond expectations
 
 
-  **Atención masiva = Potencial de crecimiento exponencial**
+  **Massive attention = Exponential growth potential**
 
 
-  El enfoque sin restricciones de iDEGEN, combinado con su naturaleza viral, lo posiciona como uno de los proyectos más emocionantes y arriesgados del criptoespacio. La atención global que está generando no solo impulsa su valor, sino que redefine lo que puede lograrse con una IA meme coin.
+  iDEGEN’s unrestricted approach, combined with its viral nature, positions it as one of the most exciting and risky projects in the crypto space. The global attention it generates not only boosts its value but redefines what can be achieved with an AI-powered meme coin.
 
 
   <!--EndFragment-->
@@ -71,13 +71,13 @@ mk5: >-
   <!--StartFragment-->
 
 
-  ### Conclusión: iDEGEN, el caos convertido en oportunidad
+  ### Conclusion: iDEGEN, chaos turned into opportunity
 
 
-  **El meme coin más disruptivo del momento**
+  **The most disruptive meme coin of the moment**
 
 
-  Con su formato de subasta único, interacción comunitaria y un enfoque en la viralidad, iDEGEN está listo para marcar un antes y un después en la historia de los meme coins impulsados por IA. Es la encarnación del caos cripto llevado a nuevas alturas.
+  With its unique auction format, community interaction, and focus on virality, iDEGEN is poised to set a new standard in the history of AI-driven meme coins. It embodies crypto chaos taken to unprecedented heights.
 
 
   <!--EndFragment-->
