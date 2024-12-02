@@ -1,5 +1,5 @@
 ---
-title: BitGo lanza una plataforma cripto para usuarios minoristas
+title: BitGo launches a crypto platform for retail users
 date: 2024-12-02T20:04:28.902Z
 featuredimage: https://crypto.news/app/uploads/2023/10/crypto-news-Blockchain-E-Ticketing-Platform-UTIX03.webp
 categoria: Business
@@ -8,20 +8,20 @@ tags:
   - "#BitGo"
   - "#CryptoPlatform"
   - "#RetailInvestors"
-short-description: BitGo, conocido por sus servicios para instituciones, ahora
-  abre las puertas a inversores minoristas con una plataforma segura y fácil de
-  usar que promete transformar la experiencia cripto.
+short-description: BitGo, renowned for its institutional services, now opens its
+  doors to retail investors with a secure and user-friendly platform designed to
+  transform the crypto experience.
 mk1: >-
   <!--StartFragment-->
 
 
-  ### BitGo: Expandiendo sus horizontes hacia el mercado minorista
+  ### BitGo: Expanding horizons into the retail market
 
 
-  **Una plataforma diseñada para todos los usuarios**
+  **A platform designed for all users**
 
 
-  BitGo, líder en la gestión de activos digitales para instituciones, presenta su primera plataforma dirigida a inversores minoristas. Esta iniciativa ofrece acceso a herramientas exclusivas como comercio seguro, staking, custodia y servicios de préstamo, todo con el respaldo de su experiencia en seguridad.
+  BitGo, a leader in digital asset management for institutions, introduces its first platform tailored for retail investors. This initiative provides access to exclusive tools like secure trading, staking, custody, and lending services, all backed by BitGo's expertise in security.
 
 
   <!--EndFragment-->
@@ -29,13 +29,13 @@ mk2: >-
   <!--StartFragment-->
 
 
-  ### Características destacadas de la nueva plataforma
+  ### Key features of the new platform
 
 
-  **Seguridad y facilidad de uso en cada interacción**
+  **Security and ease of use in every interaction**
 
 
-  La plataforma proporciona almacenamiento en frío para proteger los activos digitales, junto con capacidades de trading y staking accesibles para usuarios cotidianos. Además, los inversores de EE. UU. pueden participar en un sorteo trimestral para ganar un Bitcoin, incentivando aún más su uso.
+  The platform offers cold storage to protect digital assets alongside trading and staking capabilities accessible to everyday users. Additionally, U.S. investors can enter a quarterly lottery to win one Bitcoin, further incentivizing its adoption.
 
 
   <!--EndFragment-->
@@ -43,13 +43,13 @@ mk3: >-
   <!--StartFragment-->
 
 
-  ### La importancia de los inversores minoristas en el mercado cripto
+  ### The significance of retail investors in the crypto market
 
 
-  **Un segmento clave que lidera el mercado**
+  **A key segment leading the market**
 
 
-  Los inversores minoristas controlan el 88% del suministro de Bitcoin, destacando su dominio frente a las instituciones. Con este lanzamiento, BitGo refuerza su compromiso de ofrecer una plataforma accesible que cumpla con los estándares de seguridad institucional.
+  Retail investors control 88% of Bitcoin’s supply, showcasing their dominance over institutions. With this launch, BitGo reinforces its commitment to providing an accessible platform that meets institutional-grade security standards.
 
 
   <!--EndFragment-->
@@ -57,13 +57,13 @@ mk4: >-
   <!--StartFragment-->
 
 
-  ### BitGo: Innovación y confianza en un mercado competitivo
+  ### BitGo: Innovation and trust in a competitive market
 
 
-  **Marcando la diferencia con un enfoque en la seguridad**
+  **Standing out with a focus on security**
 
 
-  BitGo se posiciona como un líder al ofrecer herramientas fáciles de usar y seguras que permiten a los usuarios gestionar activos digitales sin complicaciones. Este enfoque ayuda a destacar en un mercado saturado de opciones.
+  BitGo positions itself as a leader by offering user-friendly and secure tools that allow users to manage digital assets effortlessly. This focus helps the platform distinguish itself in a crowded market.
 
 
   <!--EndFragment-->
@@ -71,13 +71,13 @@ mk5: >-
   <!--StartFragment-->
 
 
-  ### Transformando la experiencia minorista con BitGo
+  ### Transforming the retail experience with BitGo
 
 
-  **Un puente entre la inversión institucional y los usuarios cotidianos**
+  **A bridge between institutional investment and everyday users**
 
 
-  Con este lanzamiento, BitGo combina su experiencia institucional con una interfaz intuitiva y accesible para todos. Este movimiento subraya su misión de democratizar la inversión en criptomonedas y garantizar la confianza de los usuarios.
+  With this launch, BitGo combines its institutional expertise with an intuitive and accessible interface for everyone. This move underscores its mission to democratize cryptocurrency investment and ensure user trust.
 
 
   <!--EndFragment-->
