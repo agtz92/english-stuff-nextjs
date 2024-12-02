@@ -1,5 +1,5 @@
 ---
-title: MEXC refuerza su presencia en Vietnam al participar en VTIS 2024
+title: MEXC strengthens its presence in Vietnam by participating in VTIS 2024
 date: 2024-12-02T20:09:52.678Z
 featuredimage: https://crypto.news/app/uploads/2024/09/crypto-news-event-option01-1380x820.webp
 categoria: Business
@@ -8,21 +8,21 @@ tags:
   - "#MEXC"
   - "#VTIS2024"
   - "#CryptoVietnam"
-short-description: MEXC, una de las plataformas líderes en comercio de activos
-  digitales, participará en el Vietnam Tech Impact Summit (VTIS) 2024,
-  fortaleciendo su posición en el mercado vietnamita y ampliando colaboraciones
-  con líderes de opinión clave (KOLs).
+short-description: MEXC, one of the leading digital asset trading platforms,
+  will participate in the Vietnam Tech Impact Summit (VTIS) 2024, reinforcing
+  its position in the Vietnamese market and expanding collaborations with key
+  opinion leaders (KOLs).
 mk1: >-
   <!--StartFragment-->
 
 
-  ### VTIS 2024: Un evento clave para el sector cripto y tecnológico
+  ### VTIS 2024: A key event for the crypto and tech sectors
 
 
-  **Presencia estratégica de MEXC en el mercado vietnamita**
+  **Strategic presence of MEXC in the Vietnamese market**
 
 
-  Del 3 al 4 de diciembre, MEXC se unirá a VTIS 2024 en Hanói, Vietnam. Este evento reúne a líderes en los sectores de AI, Fintech, Blockchain y Gaming, proporcionando a MEXC una plataforma para consolidar su posición y explorar nuevas oportunidades en el dinámico mercado vietnamita.
+  From December 3 to 4, MEXC will join VTIS 2024 in Hanoi, Vietnam. This event gathers leaders from AI, Fintech, Blockchain, and Gaming sectors, providing MEXC with a platform to strengthen its position and explore new opportunities in Vietnam's dynamic market.
 
 
   <!--EndFragment-->
@@ -30,23 +30,26 @@ mk2: >-
   <!--StartFragment-->
 
 
-  ### Fortaleciendo lazos con la comunidad local
-
-
   ![MEXC](https://crypto.news/app/uploads/2024/11/Picture4_MEXC.jpg.webp "MEXC")
 
 
-  **Iniciativas comunitarias lideradas por MEXC Vietnam**
+  <!--StartFragment-->
 
 
-  El equipo de MEXC Vietnam ha desarrollado iniciativas destacadas para conectar con la comunidad, como eventos presenciales y actividades caritativas. Entre sus logros se encuentran:
+  ### Strengthening ties with the local community
 
 
-  * **Eventos comunitarios:** Celebraciones como el "Bitcoin Pizza Day" y su 4.º aniversario, que han reunido a usuarios, inversores y KOLs locales.
+  **Community initiatives led by MEXC Vietnam**
 
-  * **Responsabilidad social:** Donaciones y actividades benéficas durante festividades tradicionales para apoyar a niños y comunidades vulnerables.
 
-  * **Iniciativas digitales:** La serie de entrevistas "MEXConnect," que explora tendencias en inversión financiera y criptomonedas con KOLs vietnamitas reconocidos.
+  The MEXC Vietnam team has developed impactful initiatives to connect with the community, including events and charitable activities. Key achievements include:
+
+
+  * **Community events:** Celebrations like "Bitcoin Pizza Day" and MEXC's 4th anniversary, bringing together users, investors, and local KOLs.
+
+  * **Social responsibility:** Donations and charitable activities during traditional festivals to support children and vulnerable communities.
+
+  * **Digital initiatives:** The "MEXConnect" interview series, where renowned Vietnamese KOLs discuss financial investment and crypto market trends.
 
 
   <!--EndFragment-->
@@ -54,13 +57,13 @@ mk3: >-
   <!--StartFragment-->
 
 
-  ### Innovación y expansión en el mercado vietnamita
+  ### Innovation and expansion in the Vietnamese market
 
 
-  **Impulsando la colaboración con KOLs locales**
+  **Boosting collaboration with local KOLs**
 
 
-  MEXC reconoce el valor de los KOLs como puente entre la marca y sus usuarios. Con su participación en VTIS 2024, MEXC busca establecer nuevas asociaciones estratégicas con líderes del sector y reforzar su compromiso con el desarrollo del ecosistema cripto en Vietnam.
+  MEXC values KOLs as a bridge between the brand and its users. By participating in VTIS 2024, MEXC aims to establish new strategic partnerships with industry leaders and strengthen its commitment to developing Vietnam's crypto ecosystem.
 
 
   <!--EndFragment-->
@@ -68,13 +71,13 @@ mk4: >-
   <!--StartFragment-->
 
 
-  ### Sobre MEXC: Una puerta de entrada accesible al mundo cripto
+  ### About MEXC: An accessible gateway to the crypto world
 
 
-  **Liderazgo global en comercio de activos digitales**
+  **Global leadership in digital asset trading**
 
 
-  Desde su fundación en 2018, MEXC ha crecido hasta servir a más de 30 millones de usuarios en 170 países. Con una amplia gama de tokens, oportunidades de airdrops y tarifas competitivas, MEXC combina accesibilidad y seguridad, posicionándose como una plataforma ideal tanto para principiantes como para inversores experimentados.
+  Founded in 2018, MEXC has grown to serve over 30 million users in 170 countries. With a wide selection of tokens, airdrop opportunities, and competitive fees, MEXC combines accessibility and security, positioning itself as an ideal platform for both beginners and experienced investors.
 
 
   <!--EndFragment-->
