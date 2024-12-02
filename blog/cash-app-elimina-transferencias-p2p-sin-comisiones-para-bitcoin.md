@@ -1,5 +1,5 @@
 ---
-title: Cash App elimina transferencias P2P sin comisiones para Bitcoin
+title: Cash App ends fee-free P2P transfers for Bitcoin
 date: 2024-12-02T20:05:11.256Z
 featuredimage: https://crypto.news/app/uploads/2023/11/crypto-news-Jack-Dorsey05.webp
 categoria: Business
@@ -8,20 +8,20 @@ tags:
   - "#CashApp"
   - "#Bitcoin"
   - "#CryptoRegulations"
-short-description: Cash App, de Block Inc., finalizará las transferencias entre
-  usuarios de Bitcoin usando $cashtags el 20 de diciembre de 2024, citando la
-  necesidad de enfocar recursos en otras funcionalidades.
+short-description: Cash App, part of Block Inc., will terminate Bitcoin
+  transfers using $cashtags on December 20, 2024, citing the need to focus
+  resources on other functionalities.
 mk1: >-
   <!--StartFragment-->
 
 
-  ### Fin de las transferencias P2P de Bitcoin en Cash App
+  ### The end of Bitcoin P2P transfers on Cash App
 
 
-  **Un cambio estratégico en medio de investigaciones regulatorias**
+  **A strategic change amid regulatory investigations**
 
 
-  Cash App anunció que eliminará la función de transferencias de Bitcoin entre $cashtags, pero los usuarios podrán continuar enviando y recibiendo Bitcoin a través de Lightning Network o la blockchain de Bitcoin. Este cambio llega meses después de investigaciones federales sobre las prácticas de cumplimiento de Block, la empresa matriz de Cash App.
+  Cash App announced it will discontinue the Bitcoin transfer feature between $cashtags, but users will still be able to send and receive Bitcoin via the Lightning Network or the Bitcoin blockchain. This change comes months after federal investigations into compliance practices at Block, Cash App's parent company.
 
 
   <!--EndFragment-->
@@ -29,13 +29,13 @@ mk2: >-
   <!--StartFragment-->
 
 
-  ### Impacto en los usuarios y servicios alternativos
+  ### Impact on users and alternative services
 
 
-  **Qué significa este cambio para los usuarios**
+  **What this change means for users**
 
 
-  El cambio afecta únicamente a las transferencias de Bitcoin, dejando intactos otros servicios como las transacciones en efectivo y acciones. Según Cash App, esta decisión busca priorizar productos más valorados por los usuarios de Bitcoin en la plataforma.
+  This decision affects only Bitcoin transfers, leaving other services like cash and stock transactions untouched. According to Cash App, the move aims to prioritize products more valued by Bitcoin users on the platform.
 
 
   <!--EndFragment-->
@@ -43,13 +43,13 @@ mk3: >-
   <!--StartFragment-->
 
 
-  ### Desempeño financiero de Cash App en el sector cripto
+  ### Cash App’s financial performance in the crypto sector
 
 
-  **Bitcoin como fuente de ingresos significativa**
+  **Bitcoin as a significant source of revenue**
 
 
-  En 2023, Cash App generó $65 millones en ganancias brutas de Bitcoin solo en el cuarto trimestre, representando una porción considerable de los ingresos de Block. Sin embargo, no se ha divulgado cuántos usuarios utilizaban las transferencias de Bitcoin entre $cashtags.
+  In 2023, Cash App generated $65 million in Bitcoin gross profits in Q4 alone, making up a significant portion of Block's revenue. However, it remains unclear how many users utilized the Bitcoin transfer feature via $cashtags.
 
 
   <!--EndFragment-->
@@ -57,13 +57,13 @@ mk4: >-
   <!--StartFragment-->
 
 
-  ### Investigaciones y desafíos regulatorios
+  ### Investigations and regulatory challenges
 
 
-  **El trasfondo de las investigaciones sobre Block**
+  **The background of Block's compliance scrutiny**
 
 
-  Reportes recientes destacaron preocupaciones regulatorias sobre los riesgos de cumplimiento en Cash App, incluidas transacciones con entidades en países sancionados. Aunque la empresa ha reforzado sus controles de cumplimiento, las investigaciones han planteado dudas sobre la seguridad del diseño de la plataforma.
+  Recent reports have raised concerns about compliance risks on Cash App, including transactions with entities in sanctioned countries. While the company has strengthened its compliance controls, investigations have highlighted potential vulnerabilities in the platform's design.
 
 
   <!--EndFragment-->
@@ -71,13 +71,13 @@ mk5: >-
   <!--StartFragment-->
 
 
-  ### Compromiso continuo con Bitcoin y la innovación
+  ### Ongoing commitment to Bitcoin and innovation
 
 
-  **El futuro de Cash App en el mercado cripto**
+  **The future of Cash App in the crypto market**
 
 
-  A pesar del fin de las transferencias P2P de Bitcoin, Cash App sigue comprometida con ofrecer herramientas innovadoras y accesibles para usuarios de criptomonedas. La plataforma continuará apoyando transacciones a través de Lightning Network y la red de Bitcoin, fortaleciendo su enfoque en la seguridad y usabilidad.
+  Despite ending Bitcoin P2P transfers, Cash App remains committed to offering innovative and accessible tools for cryptocurrency users. The platform will continue supporting transactions via the Lightning Network and Bitcoin blockchain, emphasizing security and usability.
 
 
   <!--EndFragment-->
