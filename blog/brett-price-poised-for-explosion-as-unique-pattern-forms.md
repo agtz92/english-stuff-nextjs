@@ -1,7 +1,7 @@
 ---
 title: Brett Price Poised for Explosion as Unique Pattern Forms
 date: 2025-01-02T18:13:25.042Z
-featuredimage: https://crypto.news/app/uploads/2024/05/crypto-news-Binance-option03.webp
+featuredimage: https://crypto.news/app/uploads/2024/02/crypto-news-bull-option04.webp
 categoria: Business
 deals: No
 tags:
