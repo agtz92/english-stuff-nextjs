@@ -50,6 +50,9 @@ const Footer = () => {
           <Link href="https://www.rollospvc.com" target="_blank">
             Cortinas Hawaianas Armadas
           </Link>
+          <Link href="https://grupohule.com/categories/cortinas-hawaianas" target="_blank">
+            Rollos de PVC para cortinas
+          </Link>
           <Link
             href="https://www.antesdelexamen.com/categorias/preguntas-de-examen/"
             target="_blank"
