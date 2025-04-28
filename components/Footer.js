@@ -50,10 +50,16 @@ const Footer = () => {
           <Link href="https://www.rollospvc.com" target="_blank">
             Cortinas Hawaianas Armadas
           </Link>
-          <Link href="https://www.foodplusfeed.com/subcategoria/sorbato-de-potasio" target="_blank">
+          <Link
+            href="https://www.foodplusfeed.com/subcategoria/sorbato-de-potasio"
+            target="_blank"
+          >
             Venta de Sorbato de Potasio al Mayoreo
           </Link>
-          <Link href="https://grupohule.com/categories/cortinas-hawaianas" target="_blank">
+          <Link
+            href="https://grupohule.com/categories/cortinas-hawaianas"
+            target="_blank"
+          >
             Rollos de PVC para cortinas
           </Link>
           <Link
@@ -77,6 +83,9 @@ const Footer = () => {
           </Link>
           <Link href="https://www.10datos.com" target="_blank">
             Noticias de gaming
+          </Link>
+          <Link href="https://www.mexgamer.com/categories/anime">
+            Noticias de Anime y Videojuegos en Español
           </Link>
         </Grid>
         <Grid item xs={12} md={12}>
