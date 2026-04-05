@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { sitename, motto } from "./siteData"
 
-const Nav = ({ isMobile, siteData }) => {
+const Nav = ({ isMobile }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -13,34 +13,17 @@ const Nav = ({ isMobile, siteData }) => {
 
   return (
     <>
-      
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          sx={{
-            borderBottom: "1px solid #663399",
-            marginLeft: 20,
-            marginRight: 20,
-          }}
-          className='pc-only'
-        >
-          <h1 style={{ fontSize: "4em", fontWeight: 600, margin: 0 }}>
-            {sitename}
-          </h1>
-          <h3
-            style={{
-              fontSize: "1.5em",
-              fontWeight: 300,
-              textAlign: "center",
-              margin: 0,
-              letterSpacing: "2px",
-            }}
-          >
-            {motto}
-          </h3>
-        </Box>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        className="pc-only masthead"
+        sx={{ mx: "5%" }}
+      >
+        <h1>{sitename}</h1>
+        <p>{motto}</p>
+      </Box>
       <nav className={`nav ${isOpen ? "open" : ""}`}>
         <div className="logo">
           <Link href="/">{sitename}</Link>
@@ -53,32 +36,32 @@ const Nav = ({ isMobile, siteData }) => {
         <ul className={`menu ${isOpen ? "open" : ""}`}>
           <li>
             <Link href="/" onClick={toggleMenu}>
-              NEW
+              New
             </Link>
           </li>
           <li>
             <Link href="/categories/entertainment" onClick={toggleMenu}>
-              ENTERTAINMENT
+              Entertainment
             </Link>
           </li>
           <li>
             <Link href="/categories/lifestyle" onClick={toggleMenu}>
-              LIFESTYLE
+              Lifestyle
             </Link>
           </li>
           <li>
             <Link href="/categories/culture" onClick={toggleMenu}>
-              CULTURE
+              Culture
             </Link>
           </li>
           <li>
             <Link href="/categories/tech" onClick={toggleMenu}>
-              TECH
+              Tech
             </Link>
           </li>
           <li>
             <Link href="/categories/business" onClick={toggleMenu}>
-              BUSINESS
+              Business
             </Link>
           </li>
         </ul>

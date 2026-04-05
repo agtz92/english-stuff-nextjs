@@ -1,159 +1,111 @@
 import fs from "fs"
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic"
 import matter from "gray-matter"
 import Link from "next/link"
 import Head from "next/head"
-import  Grid  from "@mui/material/Grid"
+import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
-//import LargeCard from "@/components/LargeCard"
 import { sitename, sitedomain } from "../components/siteData"
 import CoverCard from "@/components/CoverCard"
-//import TextCard from "@/components/TextCard"
 
-export default function Home({ blogs, isMobile }) {
-  // Sort the blogs by date in descending order
+export default function Home({ blogs }) {
   const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date))
-  const first = sortedBlogs.slice(0, 1)
-  const nextTwo = sortedBlogs.slice(1, 3)
-  const nextFour = sortedBlogs.slice(3, 7)
-  const daRest = sortedBlogs.slice(7, 15)
-  const TextCard = dynamic(() => import('@/components/TextCard'))
-  const LargeCard = dynamic(() => import('@/components/LargeCard'))
-  
-  
-  const deals = sortedBlogs.filter((blog) => blog.deals === "Yes")
+  const hero = sortedBlogs.slice(0, 1)
+  const secondary = sortedBlogs.slice(1, 3)
+  const sidebar = sortedBlogs.slice(3, 7)
+  const featured = sortedBlogs.filter((blog) => blog.deals === "Yes")
+  const recent = sortedBlogs.slice(7, 19)
+
+  const TextCard = dynamic(() => import("@/components/TextCard"))
+  const LargeCard = dynamic(() => import("@/components/LargeCard"))
+
   return (
-    <Box
-      className='margins'
-    >
+    <Box className="margins" sx={{ pb: 6 }}>
       <Head>
         <title>{sitename} - Quick Reads on Trending Topics</title>
-        <meta name="description" content="3 min read brings you quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment." />
+        <meta
+          name="description"
+          content="3 min read brings you quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment."
+        />
         <link rel="canonical" href={sitedomain} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${sitename} - Quick Reads on Trending Topics`} />
-        <meta property="og:description" content="Quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment." />
+        <meta
+          property="og:title"
+          content={`${sitename} - Quick Reads on Trending Topics`}
+        />
+        <meta
+          property="og:description"
+          content="Quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment."
+        />
         <meta property="og:url" content={sitedomain} />
         <meta property="og:site_name" content={sitename} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${sitename} - Quick Reads on Trending Topics`} />
-        <meta name="twitter:description" content="Quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment." />
+        <meta
+          name="twitter:title"
+          content={`${sitename} - Quick Reads on Trending Topics`}
+        />
+        <meta
+          name="twitter:description"
+          content="Quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment."
+        />
       </Head>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        sx={{
-          borderBottom: "1px solid #d80032",
-          marginBottom: 5,
-        }}
-        className='margins'
-      >
-        <h3
-          style={{
-            fontSize: "1.5em",
-            fontWeight: 600,
-            textAlign: "center",
-            letterSpacing: "2px",
-          }}
-        >
-          NEWEST POSTS
-        </h3>
-      </Box>
+
+      {/* Latest Section */}
+      <div className="section-label">Latest</div>
+
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Grid container spacing={2}>
-            {first.map((blog) => (
-              <Grid key={blog.slug} item xs={12} md={12}>
-                <Link href={`/${blog.slug}`}>
-                  <CoverCard
-                    post={blog}
-                  />
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Grid container spacing={2}>
-            {nextTwo.map((blog) => (
-              <Grid key={blog.slug} item xs={12} md={12}>
-                <Link href={`/${blog.slug}`}>
-                  <CoverCard post={blog} secondary/>
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Grid container spacing={1}>
-            {nextFour.map((blog) => (
-              <Grid key={blog.slug} item xs={12} md={12}>
-                <Link href={`/${blog.slug}`}>
-                  <TextCard post={blog} height="auto" />
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        sx={{
-          borderBottom: "1px solid #663399",
-          marginTop: 5,
-        }}
-        className='margins'
-      >
-        <h3
-          style={{
-            fontSize: "1.5em",
-            fontWeight: 600,
-            textAlign: "center",
-            letterSpacing: "2px",
-          }}
-        >
-          FEATURED POSTS
-        </h3>
-      </Box>
-      <Grid container spacing={2} sx={{ marginTop: 2 }}>
-        {deals.map((blog) => (
-          <Grid key={blog.slug} item xs={12} md={3}>
-            <Link href={`/${blog.slug}`}>
-              <CoverCard post={blog} height={"200px"} h1="1rem" secondary />
+          {hero.map((blog) => (
+            <Link key={blog.slug} href={`/${blog.slug}`}>
+              <CoverCard post={blog} />
             </Link>
+          ))}
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Grid container spacing={2}>
+            {secondary.map((blog) => (
+              <Grid key={blog.slug} item xs={12}>
+                <Link href={`/${blog.slug}`}>
+                  <CoverCard post={blog} secondary />
+                </Link>
+              </Grid>
+            ))}
           </Grid>
-        ))}
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <Grid container spacing={1.5}>
+            {sidebar.map((blog) => (
+              <Grid key={blog.slug} item xs={12}>
+                <Link href={`/${blog.slug}`}>
+                  <TextCard post={blog} />
+                </Link>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
       </Grid>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        sx={{
-          borderBottom: "1px solid #663399",
-          marginTop: 5,
-        }}
-        className='margins'
-      >
-        <h3
-          style={{
-            fontSize: "1.5em",
-            fontWeight: 600,
-            textAlign: "center",
-            letterSpacing: "2px",
-          }}
-        >
-          RECENT STUFF
-        </h3>
-      </Box>
-      <Grid container spacing={2} sx={{ marginTop: 2 }}>
-        {daRest.map((blog) => (
-          <Grid key={blog.slug} item xs={12} md={3}>
+
+      {/* Featured Section */}
+      {featured.length > 0 && (
+        <>
+          <div className="section-label">Featured</div>
+          <Grid container spacing={2}>
+            {featured.map((blog) => (
+              <Grid key={blog.slug} item xs={12} md={3}>
+                <Link href={`/${blog.slug}`}>
+                  <CoverCard post={blog} h1="1rem" secondary />
+                </Link>
+              </Grid>
+            ))}
+          </Grid>
+        </>
+      )}
+
+      {/* Recent Section */}
+      <div className="section-label">Recent</div>
+      <Grid container spacing={2.5}>
+        {recent.map((blog) => (
+          <Grid key={blog.slug} item xs={12} sm={6} md={3}>
             <Link href={`/${blog.slug}`}>
               <LargeCard post={blog} />
             </Link>
@@ -166,35 +118,30 @@ export default function Home({ blogs, isMobile }) {
 
 export async function getStaticProps() {
   try {
-    // List of files in the "blogs" folder, excluding ".DS_Store"
     const filesInBlogs = fs
       .readdirSync("./blog")
       .filter((filename) => !filename.startsWith(".DS_Store"))
 
-    // Get the front matter and slug (the filename without .md) of all files
     const blogs = filesInBlogs.map((filename) => {
       const file = fs.readFileSync(`./blog/${filename}`, "utf8")
       const matterData = matter(file)
 
-      // Check if matterData.data.date exists before calling toISOString()
       const isoDate = matterData.data.date
         ? new Date(matterData.data.date).toISOString()
         : ""
 
-      // Format the ISO date for display in the desired locale
       const formattedDate = matterData.data.date
         ? new Date(matterData.data.date).toLocaleDateString("en-US")
         : ""
 
-      // Ensure shortDescription is defined for each blog
       const shortDescription = matterData.data["short-description"] || ""
 
       return {
         ...matterData.data,
         slug: filename.slice(0, filename.indexOf(".")),
-        date: isoDate, // Keep the ISO date
-        formattedDate: formattedDate, // Formatted date
-        shortDescription: shortDescription, // Ensure shortDescription is defined
+        date: isoDate,
+        formattedDate: formattedDate,
+        shortDescription: shortDescription,
       }
     })
 

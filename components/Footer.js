@@ -1,44 +1,63 @@
 import { Box, Grid } from "@mui/material"
 import Link from "next/link"
-import { useState } from "react"
 import { sitename, motto } from "./siteData"
-import Image from "next/image"
 
 const Footer = () => {
   return (
     <Box
       sx={{
-        margin: 5,
-        borderTop: "1px solid #663399",
-        paddingTop: 2,
+        mt: 10,
+        borderTop: "2px solid",
+        borderColor: "var(--color-border-strong)",
+        pt: 6,
+        pb: 4,
+        px: { xs: 3, md: 8 },
       }}
       className="footer"
     >
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         <Grid item xs={12} md={4}>
-          <p>{sitename}</p>
-          <p>{motto}</p>
+          <Box
+            sx={{
+              fontFamily: "var(--font-display)",
+              fontSize: "1.6rem",
+              mb: 1,
+            }}
+          >
+            {sitename}
+          </Box>
+          <Box
+            sx={{
+              fontFamily: "var(--font-heading)",
+              fontSize: "0.75rem",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              color: "var(--color-text-secondary)",
+            }}
+          >
+            {motto}
+          </Box>
         </Grid>
         <Grid item xs={12} md={4}>
           <h4>Categories</h4>
           <ul>
             <li>
-              <Link href="/">NEW</Link>
+              <Link href="/">New</Link>
             </li>
             <li>
-              <Link href="/categories/entertainment">ENTERTAINMENT</Link>
+              <Link href="/categories/entertainment">Entertainment</Link>
             </li>
             <li>
-              <Link href="/categories/lifestyle">LIFESTYLE</Link>
+              <Link href="/categories/lifestyle">Lifestyle</Link>
             </li>
             <li>
-              <Link href="/categories/culture">CULTURE</Link>
+              <Link href="/categories/culture">Culture</Link>
             </li>
             <li>
-              <Link href="/categories/tech">TECH</Link>
+              <Link href="/categories/tech">Tech</Link>
             </li>
             <li>
-              <Link href="/categories/business">BUSINESS</Link>
+              <Link href="/categories/business">Business</Link>
             </li>
           </ul>
         </Grid>
@@ -78,18 +97,30 @@ const Footer = () => {
             Velarias Arquitectonicas Queretaro
           </Link>
           <Link href="https://www.soy-nuevo.com/" target="_blank">
-            Cazador de Ofertas para Productos de Bebés como Safety 1st, Doona,
-            Uppababy y más!
+            Cazador de Ofertas para Productos de Bebes
           </Link>
           <Link href="https://www.10datos.com" target="_blank">
             Noticias de gaming
           </Link>
           <Link href="https://www.mexgamer.com/categories/anime">
-            Noticias de Anime y Videojuegos en Español
+            Noticias de Anime y Videojuegos
           </Link>
         </Grid>
-        <Grid item xs={12} md={12}>
-          <p style={{ width: "100%", textAlign: "center" }}>{sitename} 2023</p>
+        <Grid item xs={12}>
+          <Box
+            sx={{
+              textAlign: "center",
+              pt: 4,
+              mt: 4,
+              borderTop: "1px solid var(--color-border)",
+              fontFamily: "var(--font-heading)",
+              fontSize: "0.75rem",
+              color: "var(--color-text-secondary)",
+              letterSpacing: "1px",
+            }}
+          >
+            {sitename} &copy; {new Date().getFullYear()}
+          </Box>
         </Grid>
       </Grid>
     </Box>

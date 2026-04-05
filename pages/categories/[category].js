@@ -8,89 +8,88 @@ import Head from "next/head"
 import LargeCard from "@/components/LargeCard"
 import { sitename, sitedomain } from "@/components/siteData"
 
-export default function CategoryPage({ matchingFiles, category, isMobile }) {
-  // Sort the blogs by date in descending order
+export default function CategoryPage({ matchingFiles, category }) {
   const sortedBlogs = matchingFiles?.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   )
-  //pagination
-  const itemsPerPage = 6
+
+  const itemsPerPage = 9
   const [currentPage, setCurrentPage] = useState(1)
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
   const blogsToDisplay = sortedBlogs?.slice(startIndex, endIndex)
-  //reset current page if category changes
+
   useEffect(() => {
     setCurrentPage(1)
   }, [category])
 
   const title = sitename + " | " + category
-  
+  const displayName = category.charAt(0).toUpperCase() + category.slice(1)
+
   return (
-    <Box
-      className='margins5'
-    >
+    <Box className="margins" sx={{ pb: 6 }}>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={`Browse ${category} articles on ${sitename}. Quick, engaging reads you can finish in 3 minutes.`} />
-        <link rel="canonical" href={`${sitedomain}/categories/${category.toLowerCase()}`} />
+        <meta
+          name="description"
+          content={`Browse ${category} articles on ${sitename}. Quick, engaging reads you can finish in 3 minutes.`}
+        />
+        <link
+          rel="canonical"
+          href={`${sitedomain}/categories/${category.toLowerCase()}`}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={`Browse ${category} articles on ${sitename}.`} />
-        <meta property="og:url" content={`${sitedomain}/categories/${category.toLowerCase()}`} />
+        <meta
+          property="og:description"
+          content={`Browse ${category} articles on ${sitename}.`}
+        />
+        <meta
+          property="og:url"
+          content={`${sitedomain}/categories/${category.toLowerCase()}`}
+        />
         <meta property="og:site_name" content={sitename} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={`Browse ${category} articles on ${sitename}.`} />
+        <meta
+          name="twitter:description"
+          content={`Browse ${category} articles on ${sitename}.`}
+        />
       </Head>
-      <Box
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        sx={{
-          borderBottom: "1px solid #663399",
-          marginBottom: 5,
-        }}
-        className='margins'
-      >
-        <h3
-          style={{
-            fontSize: "1.5em",
-            fontWeight: 600,
-            textAlign: "center",
-            letterSpacing: "2px",
-          }}
-        >
-          {category.toUpperCase()}
-        </h3>
-      </Box>
 
-      <Grid container spacing={2}>
+      <div className="page-header">
+        <h1>{displayName}</h1>
+        <p>
+          {sortedBlogs.length} article{sortedBlogs.length !== 1 ? "s" : ""}
+        </p>
+      </div>
+
+      <Grid container spacing={2.5}>
         {blogsToDisplay?.map((file, index) => (
-          <Grid key={index} item xs={12} md={4}>
+          <Grid key={index} item xs={12} sm={6} md={4}>
             <Link href={`/${file.slug}`}>
               <LargeCard post={file} />
             </Link>
           </Grid>
         ))}
       </Grid>
-      {/*Pagination*/}
-      <Stack
-        spacing={2}
-        display={"flex"}
-        flexDirection={"row"}
-        alignContent={"space-evenly"}
-        justifyContent={"space-evenly"}
-        sx={{ marginTop: 5 }}
-      >
-        <Pagination
-          count={Math.ceil(sortedBlogs.length / itemsPerPage)}
-          size="large"
-          page={currentPage}
-          onChange={(event, page) => setCurrentPage(page)}
-        />
-      </Stack>
+
+      {sortedBlogs.length > itemsPerPage && (
+        <Stack
+          spacing={2}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          sx={{ mt: 6 }}
+        >
+          <Pagination
+            count={Math.ceil(sortedBlogs.length / itemsPerPage)}
+            size="large"
+            page={currentPage}
+            onChange={(event, page) => setCurrentPage(page)}
+          />
+        </Stack>
+      )}
     </Box>
   )
 }
@@ -142,7 +141,6 @@ export async function getStaticPaths() {
   const categories = new Set()
 
   for (const file of files) {
-    // Check if the file is not hidden (doesn't start with a dot)
     if (!file.startsWith(".")) {
       const fileContent = matter(
         fs.readFileSync(path.join("./categories", file), "utf8")
@@ -161,6 +159,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: "blocking", // Allow for custom handling of 404-like cases
+    fallback: "blocking",
   }
 }

@@ -1,54 +1,62 @@
 import React from "react"
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Chip,
-} from "@mui/material"
+import { Box, Card, CardContent, Chip } from "@mui/material"
 import Image from "next/image"
 
 const CoverCard = ({ post, h1, secondary }) => {
+  const formattedDate = post.date
+    ? new Date(post.date).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })
+    : ""
+
   return (
     <Card
       sx={{
         position: "relative",
-        "&:hover": {
-          "& img": {
-            transform: "scale(1.2)",
-            transition: "transform 0.2s ease",
-          },
+        borderRadius: "var(--radius)",
+        overflow: "hidden",
+        boxShadow: "none",
+        cursor: "pointer",
+        "&:hover img": {
+          transform: "scale(1.05)",
+        },
+        "&:hover .cover-overlay": {
+          background:
+            "linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)",
         },
       }}
       className={!secondary ? "cover" : "cover-secondary"}
     >
-      {/* Black overlay */}
       <Box
+        className="cover-overlay"
         sx={{
           position: "absolute",
           top: 0,
           left: 0,
           width: "100%",
           height: "100%",
-          background: "rgba(0, 0, 0, 0.6)",
+          background:
+            "linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.05) 100%)",
           zIndex: 1,
+          transition: "background 0.4s ease",
         }}
-      ></Box>
+      />
 
-      {/* Image */}
       <Image
         component="img"
-        alt="Image"
+        alt={post.title}
         src={post.featuredimage}
         placeholder="blur"
-        style={{objectFit:"cover", objectPosition:"right bottom"}}
-        width= "800"
-        height= "500"
-        blurDataURL="../public/assets/blur.jpg"
-        sx={{
-          transition: "transform 0.2s ease",
-          zIndex: -1,
+        style={{
+          objectFit: "cover",
+          objectPosition: "center",
+          transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
+        width="800"
+        height="500"
+        blurDataURL="../public/assets/blur.jpg"
       />
 
       <CardContent
@@ -56,16 +64,45 @@ const CoverCard = ({ post, h1, secondary }) => {
           position: "absolute",
           bottom: 0,
           left: 0,
-          padding: 2,
+          right: 0,
+          padding: { xs: "20px", md: "28px" },
           color: "#fff",
           zIndex: 2,
         }}
       >
-        {/* Card Content */}
-        <h1 style={{fontSize: h1 ? h1 : "1.5em"}}>{post.title}</h1>
         <Chip
           label={post.categoria}
+          sx={{
+            mb: 1.5,
+            backgroundColor: "var(--color-highlight) !important",
+          }}
         />
+        <h1
+          style={{
+            fontSize: h1 || (secondary ? "1.1rem" : "1.6rem"),
+            fontFamily: "var(--font-heading)",
+            fontWeight: 700,
+            lineHeight: 1.3,
+            margin: 0,
+            color: "#fff",
+          }}
+        >
+          {post.title}
+        </h1>
+        {!secondary && formattedDate && (
+          <Box
+            sx={{
+              mt: 1.5,
+              fontFamily: "var(--font-heading)",
+              fontSize: "0.72rem",
+              fontWeight: 400,
+              letterSpacing: "0.5px",
+              color: "rgba(255,255,255,0.7)",
+            }}
+          >
+            {formattedDate}
+          </Box>
+        )}
       </CardContent>
     </Card>
   )

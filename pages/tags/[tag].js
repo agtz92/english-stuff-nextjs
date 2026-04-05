@@ -9,22 +9,20 @@ import Head from "next/head"
 import { sitename, sitedomain } from "@/components/siteData"
 
 function removeSpecialCharactersAndLowerCase(str) {
-  // Remove special characters and spaces and convert to lowercase
   return str.replace(/[^a-zA-Z0-9]+/g, "").toLowerCase()
 }
 
-function TagPage({ matchingFiles, tag, isMobile }) {
-  // Sort the blogs by date in descending order
+function TagPage({ matchingFiles, tag }) {
   const sortedBlogs = matchingFiles?.sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   )
-  //pagination
-  const itemsPerPage = 6
+
+  const itemsPerPage = 9
   const [currentPage, setCurrentPage] = useState(1)
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
   const blogsToDisplay = sortedBlogs?.slice(startIndex, endIndex)
-  //reset current page if tag changes
+
   useEffect(() => {
     setCurrentPage(1)
   }, [tag])
@@ -32,51 +30,63 @@ function TagPage({ matchingFiles, tag, isMobile }) {
   const title = sitename + " | #" + tag
 
   return (
-    <Box
-      className='margins5'
-    >
+    <Box className="margins" sx={{ pb: 6 }}>
       <Head>
         <title>{title}</title>
-        <meta name="description" content={`Articles tagged with #${tag} on ${sitename}. Quick, engaging reads you can finish in 3 minutes.`} />
+        <meta
+          name="description"
+          content={`Articles tagged with #${tag} on ${sitename}. Quick, engaging reads you can finish in 3 minutes.`}
+        />
         <link rel="canonical" href={`${sitedomain}/tags/${tag}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={`Articles tagged with #${tag} on ${sitename}.`} />
+        <meta
+          property="og:description"
+          content={`Articles tagged with #${tag} on ${sitename}.`}
+        />
         <meta property="og:url" content={`${sitedomain}/tags/${tag}`} />
         <meta property="og:site_name" content={sitename} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={`Articles tagged with #${tag} on ${sitename}.`} />
+        <meta
+          name="twitter:description"
+          content={`Articles tagged with #${tag} on ${sitename}.`}
+        />
       </Head>
-      <h1 style={{ textAlign: "center", fontWeight: 600 }}>
-        #{tag.toUpperCase()}
-      </h1>
 
-      <Grid container spacing={2}>
+      <div className="page-header">
+        <h1>#{tag}</h1>
+        <p>
+          {sortedBlogs.length} article{sortedBlogs.length !== 1 ? "s" : ""}
+        </p>
+      </div>
+
+      <Grid container spacing={2.5}>
         {blogsToDisplay?.map((file, index) => (
-          <Grid key={index} item xs={12} md={4}>
+          <Grid key={index} item xs={12} sm={6} md={4}>
             <Link href={`/${file.slug}`}>
               <LargeCard post={file} />
             </Link>
           </Grid>
         ))}
       </Grid>
-      {/*Pagination*/}
-      <Stack
-        spacing={2}
-        display={"flex"}
-        flexDirection={"row"}
-        alignContent={"space-evenly"}
-        justifyContent={"space-evenly"}
-        sx={{ marginTop: 5 }}
-      >
-        <Pagination
-          count={Math.ceil(sortedBlogs.length / itemsPerPage)}
-          size="large"
-          page={currentPage}
-          onChange={(event, page) => setCurrentPage(page)}
-        />
-      </Stack>
+
+      {sortedBlogs.length > itemsPerPage && (
+        <Stack
+          spacing={2}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          sx={{ mt: 6 }}
+        >
+          <Pagination
+            count={Math.ceil(sortedBlogs.length / itemsPerPage)}
+            size="large"
+            page={currentPage}
+            onChange={(event, page) => setCurrentPage(page)}
+          />
+        </Stack>
+      )}
     </Box>
   )
 }
@@ -93,7 +103,6 @@ export async function getStaticPaths() {
 
     if (frontmatter.tags && frontmatter.tags.length > 0) {
       frontmatter.tags.forEach((tag) => {
-        // Use the modified function to get the tag slug
         const tagSlug = removeSpecialCharactersAndLowerCase(tag)
         tags.add(tagSlug)
       })
@@ -101,7 +110,7 @@ export async function getStaticPaths() {
   }
 
   const paths = Array.from(tags).map((tagSlug) => ({
-    params: { tag: tagSlug }, // Use the tagSlug as a string
+    params: { tag: tagSlug },
   }))
 
   return {
@@ -111,7 +120,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { tag } }) {
-  // Use the modified function to get the tag slug
   const tagSlug = removeSpecialCharactersAndLowerCase(tag)
   const files = fs.readdirSync("./blog")
   const matchingFiles = []
@@ -128,7 +136,6 @@ export async function getStaticProps({ params: { tag } }) {
       : ""
 
     if (frontmatter.tags) {
-      // Perform a case-insensitive search for the tag
       const matchingTag = frontmatter.tags.find(
         (t) => removeSpecialCharactersAndLowerCase(t) === tagSlug
       )
@@ -142,7 +149,6 @@ export async function getStaticProps({ params: { tag } }) {
           shortDescription: shortDescription,
           featuredimage: frontmatter.featuredimage,
           date: isoDate,
-          // ...
         })
       }
     }
@@ -151,7 +157,7 @@ export async function getStaticProps({ params: { tag } }) {
   return {
     props: {
       matchingFiles,
-      tag: tagSlug, // Use the lowercase tag for display
+      tag: tagSlug,
     },
   }
 }
