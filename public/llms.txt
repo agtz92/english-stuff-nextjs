@@ -1,0 +1,32 @@
+# 3 min read
+
+> Quick, engaging articles on trending topics you can finish in 3 minutes.
+
+3 min read is an online magazine publishing short-form articles across technology, business, entertainment, culture, lifestyle, gaming, and sports. The site is designed for readers who want to stay informed without the time commitment.
+
+## Content
+
+The site publishes 490+ articles organized by categories and tags.
+
+### Categories
+
+- [Tech](https://www.3minread.com/categories/tech): AI tools, coding tutorials, automation, software, and tech industry news
+- [Business](https://www.3minread.com/categories/business): Job hunting, fintech, crypto wallets, productivity tools, and career advice
+- [Entertainment](https://www.3minread.com/categories/entertainment): TV shows, movies, streaming, celebrity news, and character guides
+- [Culture](https://www.3minread.com/categories/culture): Books, literature, historical content, and cultural trends
+- [Lifestyle](https://www.3minread.com/categories/lifestyle): DIY projects, home decor, holiday crafts, recipes, and gardening
+- [Gaming](https://www.3minread.com/categories/gaming): Video games, gaming news, and reviews
+- [Sports](https://www.3minread.com/categories/sports): Sports news and analysis
+- [Random](https://www.3minread.com/categories/random): Miscellaneous topics
+
+## Pages
+
+- [Homepage](https://www.3minread.com/): Latest, featured, and recent articles
+- [Privacy Policy](https://www.3minread.com/privacy): Site privacy policy
+- [Sitemap](https://www.3minread.com/sitemap.xml): XML sitemap of all pages
+
+## Technical Details
+
+- Built with Next.js 13 and Material UI
+- Static site generation with markdown-based content
+- Hosted on Vercel / Netlify
