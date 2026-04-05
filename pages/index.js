@@ -6,7 +6,7 @@ import Head from "next/head"
 import  Grid  from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 //import LargeCard from "@/components/LargeCard"
-import { sitename } from "../components/siteData"
+import { sitename, sitedomain } from "../components/siteData"
 import CoverCard from "@/components/CoverCard"
 //import TextCard from "@/components/TextCard"
 
@@ -27,7 +27,17 @@ export default function Home({ blogs, isMobile }) {
       className='margins'
     >
       <Head>
-        <title>{sitename}</title>
+        <title>{sitename} - Quick Reads on Trending Topics</title>
+        <meta name="description" content="3 min read brings you quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment." />
+        <link rel="canonical" href={sitedomain} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${sitename} - Quick Reads on Trending Topics`} />
+        <meta property="og:description" content="Quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment." />
+        <meta property="og:url" content={sitedomain} />
+        <meta property="og:site_name" content={sitename} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${sitename} - Quick Reads on Trending Topics`} />
+        <meta name="twitter:description" content="Quick, engaging articles on technology, entertainment, business, and culture. Stay informed without the time commitment." />
       </Head>
       <Box
         display={"flex"}

@@ -1,9 +1,20 @@
 import { Box } from "@mui/material"
+import Head from "next/head"
 import React from "react"
+import { sitename, sitedomain } from "../components/siteData"
 
-const privacy = () => {
+const Privacy = () => {
   return (
     <Box sx={{ paddingLeft: 20, paddingRight: 20 }}>
+      <Head>
+        <title>Privacy Policy | {sitename}</title>
+        <meta name="description" content={`Privacy Policy for ${sitename}. Learn how we collect, use, and protect your personal information.`} />
+        <link rel="canonical" href={`${sitedomain}/privacy`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`Privacy Policy | ${sitename}`} />
+        <meta property="og:url" content={`${sitedomain}/privacy`} />
+        <meta property="og:site_name" content={sitename} />
+      </Head>
       <h1>Privacy Policy</h1>
       <p>Effective Date: 10/5/2023</p>
 
@@ -92,4 +103,4 @@ const privacy = () => {
   )
 }
 
-export default privacy
+export default Privacy
