@@ -49,7 +49,7 @@ export default function Home({ hero, secondary, sidebar, recent, featured }) {
         <Grid item xs={12} md={6}>
           {hero.map((blog) => (
             <Link key={blog.slug} href={`/${blog.slug}`}>
-              <CoverCard post={blog} priority />
+              <CoverCard post={blog} />
             </Link>
           ))}
         </Grid>
