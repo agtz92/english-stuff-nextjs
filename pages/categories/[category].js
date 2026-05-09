@@ -112,6 +112,7 @@ export async function getStaticProps({ params }) {
         date: post.date,
         featuredimage: post.featuredimage,
         shortDescription: post.shortDescription,
+        source: post.source,
       }))
 
     return {

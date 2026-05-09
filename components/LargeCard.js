@@ -57,6 +57,7 @@ const LargeCard = ({ post }) => {
           fill
           placeholder="blur"
           blurDataURL="../public/assets/blur.jpg"
+          unoptimized={post.source === "feed-blog"}
         />
       </div>
       <CardContent sx={{ p: "20px" }}>

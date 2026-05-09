@@ -49,6 +49,7 @@ const CoverCard = ({ post, h1, secondary, priority }) => {
         src={post.featuredimage}
         fill
         priority={priority}
+        unoptimized={post.source === "feed-blog"}
         sizes={
           secondary
             ? "(max-width: 768px) 100vw, 25vw"

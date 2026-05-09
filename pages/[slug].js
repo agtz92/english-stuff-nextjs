@@ -5,11 +5,13 @@ import rehypeRaw from "rehype-raw"
 import Box from "@mui/material/Box"
 import { Chip, Grid } from "@mui/material"
 import Link from "next/link"
-import { sitename } from "../components/siteData"
+import { sitename, adSlots } from "../components/siteData"
 import SEOBlog from "@/components/SEOBlog"
+import AdSlot from "@/components/AdSlot"
 import { readPostBySlug, getAllSlugs } from "@/lib/posts"
 
-export default function Blog({ frontmatter, markdown, isMobile }) {
+export default function Blog({ frontmatter, markdown, source, isMobile }) {
+  const isFeed = source === "feed-blog"
   // Format the ISO date for display in the desired locale
   const formattedDate = new Date(frontmatter.date).toLocaleDateString("en-US")
 
@@ -58,6 +60,7 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
               fill
               placeholder="blur"
               blurDataURL="../public/assets/blur.jpg"
+              unoptimized={isFeed}
             />
           </div>
         </Box>
@@ -86,18 +89,21 @@ export default function Blog({ frontmatter, markdown, isMobile }) {
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk1}
           </ReactMarkdown>
+          {frontmatter.mk2 && <AdSlot slot={adSlots.articleMid1} />}
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk2}
           </ReactMarkdown>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk3}
           </ReactMarkdown>
+          {frontmatter.mk4 && <AdSlot slot={adSlots.articleMid2} />}
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk4}
           </ReactMarkdown>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk5}
           </ReactMarkdown>
+          <AdSlot slot={adSlots.articleEnd} />
         </Box>
       </Box>
     </div>
@@ -123,6 +129,7 @@ export async function getStaticProps({ params: { slug } }) {
           shortDescription,
         },
         markdown: content,
+        source: post.source,
       },
     }
   } catch (error) {
