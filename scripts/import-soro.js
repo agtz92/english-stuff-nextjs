@@ -126,9 +126,9 @@ function buildFrontmatter(item, htmlBody) {
     featuredimage: pickFeaturedImage(item, htmlBody),
     categoria: pickCategory(item),
     deals: "No",
-    tags: tags.length ? tags : undefined,
     "short-description": shortDescription(item, htmlBody),
   }
+  if (tags.length) fm.tags = tags
   const body = splitBodyIntoSections(htmlBody)
   for (let i = 0; i < MAX_BODY_SECTIONS; i++) {
     fm[`mk${i + 1}`] = body[i] || ""
