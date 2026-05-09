@@ -89,21 +89,25 @@ export default function Blog({ frontmatter, markdown, source, isMobile }) {
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk1}
           </ReactMarkdown>
-          {frontmatter.mk2 && <AdSlot slot={adSlots.articleMid1} />}
+          {frontmatter.mk2 && (
+            <AdSlot slot={adSlots.articleMid1} type="in-article" />
+          )}
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk2}
           </ReactMarkdown>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk3}
           </ReactMarkdown>
-          {frontmatter.mk4 && <AdSlot slot={adSlots.articleMid2} />}
+          {frontmatter.mk4 && (
+            <AdSlot slot={adSlots.articleMid2} type="in-article" />
+          )}
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk4}
           </ReactMarkdown>
           <ReactMarkdown rehypePlugins={[rehypeRaw]}>
             {frontmatter.mk5}
           </ReactMarkdown>
-          <AdSlot slot={adSlots.articleEnd} />
+          <AdSlot slot={adSlots.articleEnd} type="multiplex" />
         </Box>
       </Box>
     </div>

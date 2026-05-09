@@ -3,7 +3,41 @@ import { adsenseClient } from "./siteData"
 
 const isConfigured = (slot) => slot && slot !== "REPLACE_ME"
 
-const AdSlot = ({ slot, format = "auto", minHeight = 250, style }) => {
+// Per-type defaults: AdSense expects different `data-*` attributes
+// depending on the ad unit format. These match the snippet AdSense
+// gives you when you create each unit type.
+const insAttrs = (type, slot) => {
+  switch (type) {
+    case "in-article":
+      return {
+        style: { display: "block", textAlign: "center" },
+        "data-ad-layout": "in-article",
+        "data-ad-format": "fluid",
+        "data-ad-client": adsenseClient,
+        "data-ad-slot": slot,
+      }
+    case "multiplex":
+      return {
+        style: { display: "block" },
+        "data-ad-format": "autorelaxed",
+        "data-ad-client": adsenseClient,
+        "data-ad-slot": slot,
+      }
+    case "display":
+    default:
+      return {
+        style: { display: "block" },
+        "data-ad-client": adsenseClient,
+        "data-ad-slot": slot,
+        "data-ad-format": "auto",
+        "data-full-width-responsive": "true",
+      }
+  }
+}
+
+const defaultMinHeight = (type) => (type === "multiplex" ? 400 : 250)
+
+const AdSlot = ({ slot, type = "display", minHeight, style }) => {
   const containerRef = useRef(null)
   const pushedRef = useRef(false)
 
@@ -18,8 +52,7 @@ const AdSlot = ({ slot, format = "auto", minHeight = 250, style }) => {
         ;(window.adsbygoogle = window.adsbygoogle || []).push({})
         pushedRef.current = true
       } catch (e) {
-        // adsbygoogle script not yet loaded — observer will be retained
-        // and tryPush will fire again on next intersection.
+        // adsbygoogle script not yet loaded — observer keeps watching.
       }
     }
 
@@ -41,25 +74,20 @@ const AdSlot = ({ slot, format = "auto", minHeight = 250, style }) => {
 
   if (!isConfigured(slot)) return null
 
+  const attrs = insAttrs(type, slot)
+
   return (
     <div
       ref={containerRef}
       style={{
-        minHeight,
+        minHeight: minHeight ?? defaultMinHeight(type),
         margin: "32px 0",
         textAlign: "center",
         overflow: "hidden",
         ...style,
       }}
     >
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client={adsenseClient}
-        data-ad-slot={slot}
-        data-ad-format={format}
-        data-full-width-responsive="true"
-      />
+      <ins className="adsbygoogle" {...attrs} />
     </div>
   )
 }
