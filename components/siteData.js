@@ -9,7 +9,7 @@ export const sitedomain = "https://www.3minread.com"
 // While the value is REPLACE_ME, AdSlot renders nothing (no empty boxes).
 export const adsenseClient = "ca-pub-7182528185795867"
 export const adSlots = {
-  articleMid1: "REPLACE_ME",
-  articleMid2: "REPLACE_ME",
-  articleEnd: "REPLACE_ME",
+  articleMid1: "7078313776",
+  articleMid2: "8662408474",
+  articleEnd: "2859417454",
 }
