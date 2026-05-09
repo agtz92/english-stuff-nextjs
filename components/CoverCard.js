@@ -2,7 +2,7 @@ import React from "react"
 import { Box, Card, CardContent, Chip } from "@mui/material"
 import Image from "next/image"
 
-const CoverCard = ({ post, h1, secondary }) => {
+const CoverCard = ({ post, h1, secondary, priority }) => {
   const formattedDate = post.date
     ? new Date(post.date).toLocaleDateString("en-US", {
         month: "short",
@@ -48,7 +48,12 @@ const CoverCard = ({ post, h1, secondary }) => {
         alt={post.title}
         src={post.featuredimage}
         fill
-        sizes="(max-width: 768px) 100vw, 50vw"
+        priority={priority}
+        sizes={
+          secondary
+            ? "(max-width: 768px) 100vw, 25vw"
+            : "(max-width: 768px) 100vw, 50vw"
+        }
         style={{
           objectFit: "cover",
           objectPosition: "center",

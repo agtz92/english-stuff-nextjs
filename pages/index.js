@@ -5,16 +5,9 @@ import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 import { sitename, sitedomain } from "../components/siteData"
 import CoverCard from "@/components/CoverCard"
-import { getAllPosts } from "@/lib/posts"
+import { getAllPostsList } from "@/lib/posts"
 
-export default function Home({ blogs }) {
-  const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date))
-  const hero = sortedBlogs.slice(0, 1)
-  const secondary = sortedBlogs.slice(1, 3)
-  const sidebar = sortedBlogs.slice(3, 7)
-  const featured = sortedBlogs.filter((blog) => blog.deals === "Yes")
-  const recent = sortedBlogs.slice(7, 19)
-
+export default function Home({ hero, secondary, sidebar, recent, featured }) {
   const TextCard = dynamic(() => import("@/components/TextCard"))
   const LargeCard = dynamic(() => import("@/components/LargeCard"))
 
@@ -56,7 +49,7 @@ export default function Home({ blogs }) {
         <Grid item xs={12} md={6}>
           {hero.map((blog) => (
             <Link key={blog.slug} href={`/${blog.slug}`}>
-              <CoverCard post={blog} />
+              <CoverCard post={blog} priority />
             </Link>
           ))}
         </Grid>
@@ -117,8 +110,16 @@ export default function Home({ blogs }) {
 
 export async function getStaticProps() {
   try {
-    const blogs = getAllPosts()
-    return { props: { blogs } }
+    const all = getAllPostsList().sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    )
+    const hero = all.slice(0, 1)
+    const secondary = all.slice(1, 3)
+    const sidebar = all.slice(3, 7)
+    const recent = all.slice(7, 19)
+    const featured = all.filter((b) => b.deals === "Yes").slice(0, 8)
+
+    return { props: { hero, secondary, sidebar, recent, featured } }
   } catch (error) {
     console.error("Error reading files or parsing frontmatter:", error)
     return { notFound: true }
