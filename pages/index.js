@@ -1,12 +1,11 @@
-import fs from "fs"
 import dynamic from "next/dynamic"
-import matter from "gray-matter"
 import Link from "next/link"
 import Head from "next/head"
 import Grid from "@mui/material/Grid"
 import Box from "@mui/material/Box"
 import { sitename, sitedomain } from "../components/siteData"
 import CoverCard from "@/components/CoverCard"
+import { getAllPosts } from "@/lib/posts"
 
 export default function Home({ blogs }) {
   const sortedBlogs = blogs.sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -118,42 +117,10 @@ export default function Home({ blogs }) {
 
 export async function getStaticProps() {
   try {
-    const filesInBlogs = fs
-      .readdirSync("./blog")
-      .filter((filename) => !filename.startsWith(".DS_Store"))
-
-    const blogs = filesInBlogs.map((filename) => {
-      const file = fs.readFileSync(`./blog/${filename}`, "utf8")
-      const matterData = matter(file)
-
-      const isoDate = matterData.data.date
-        ? new Date(matterData.data.date).toISOString()
-        : ""
-
-      const formattedDate = matterData.data.date
-        ? new Date(matterData.data.date).toLocaleDateString("en-US")
-        : ""
-
-      const shortDescription = matterData.data["short-description"] || ""
-
-      return {
-        ...matterData.data,
-        slug: filename.slice(0, filename.indexOf(".")),
-        date: isoDate,
-        formattedDate: formattedDate,
-        shortDescription: shortDescription,
-      }
-    })
-
-    return {
-      props: {
-        blogs,
-      },
-    }
+    const blogs = getAllPosts()
+    return { props: { blogs } }
   } catch (error) {
     console.error("Error reading files or parsing frontmatter:", error)
-    return {
-      notFound: true,
-    }
+    return { notFound: true }
   }
 }

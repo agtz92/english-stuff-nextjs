@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react"
-import fs from "fs"
-import path from "path"
-import matter from "gray-matter"
 import Link from "next/link"
 import LargeCard from "@/components/LargeCard"
 import { Box, Grid, Pagination, Stack } from "@mui/material"
 import Head from "next/head"
 import { sitename, sitedomain } from "@/components/siteData"
+import { getAllPosts } from "@/lib/posts"
 
 function removeSpecialCharactersAndLowerCase(str) {
   return str.replace(/[^a-zA-Z0-9]+/g, "").toLowerCase()
@@ -92,19 +90,11 @@ function TagPage({ matchingFiles, tag }) {
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync("./blog")
   const tags = new Set()
-
-  for (const file of files) {
-    const fileContent = matter(
-      fs.readFileSync(path.join("./blog", file), "utf8")
-    )
-    const frontmatter = fileContent.data
-
-    if (frontmatter.tags && frontmatter.tags.length > 0) {
-      frontmatter.tags.forEach((tag) => {
-        const tagSlug = removeSpecialCharactersAndLowerCase(tag)
-        tags.add(tagSlug)
+  for (const post of getAllPosts()) {
+    if (post.tags && post.tags.length > 0) {
+      post.tags.forEach((tag) => {
+        tags.add(removeSpecialCharactersAndLowerCase(tag))
       })
     }
   }
@@ -121,38 +111,22 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { tag } }) {
   const tagSlug = removeSpecialCharactersAndLowerCase(tag)
-  const files = fs.readdirSync("./blog")
-  const matchingFiles = []
-
-  for (const file of files) {
-    const fileContent = matter(
-      fs.readFileSync(path.join("./blog", file), "utf8")
+  const matchingFiles = getAllPosts()
+    .filter(
+      (post) =>
+        post.tags &&
+        post.tags.some(
+          (t) => removeSpecialCharactersAndLowerCase(t) === tagSlug
+        )
     )
-    const frontmatter = fileContent.data
-    const shortDescription = frontmatter["short-description"] || ""
-
-    const isoDate = frontmatter.date
-      ? new Date(frontmatter.date).toISOString()
-      : ""
-
-    if (frontmatter.tags) {
-      const matchingTag = frontmatter.tags.find(
-        (t) => removeSpecialCharactersAndLowerCase(t) === tagSlug
-      )
-
-      if (matchingTag) {
-        const slug = file.slice(0, file.indexOf("."))
-        matchingFiles.push({
-          slug,
-          title: frontmatter.title,
-          categoria: frontmatter.categoria,
-          shortDescription: shortDescription,
-          featuredimage: frontmatter.featuredimage,
-          date: isoDate,
-        })
-      }
-    }
-  }
+    .map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      categoria: post.categoria,
+      shortDescription: post.shortDescription,
+      featuredimage: post.featuredimage,
+      date: post.date,
+    }))
 
   return {
     props: {

@@ -7,6 +7,7 @@ import Link from "next/link"
 import Head from "next/head"
 import LargeCard from "@/components/LargeCard"
 import { sitename, sitedomain } from "@/components/siteData"
+import { getAllPosts } from "@/lib/posts"
 
 export default function CategoryPage({ matchingFiles, category }) {
   const sortedBlogs = matchingFiles?.sort(
@@ -98,44 +99,30 @@ export async function getStaticProps({ params }) {
   const { category } = params
   try {
     const categorySlug = category.toLowerCase()
-    const files = fs.readdirSync("./blog")
-    const matchingFiles = []
-
-    for (const file of files) {
-      const fileContent = matter(
-        fs.readFileSync(path.join("./blog", file), "utf8")
+    const matchingFiles = getAllPosts()
+      .filter(
+        (post) =>
+          post.categoria && post.categoria.toLowerCase() === categorySlug
       )
-      const frontmatter = fileContent.data
-      const shortDescription = frontmatter["short-description"] || ""
-
-      if (
-        frontmatter.categoria &&
-        frontmatter.categoria.toLowerCase() === categorySlug
-      ) {
-        const slug = file.slice(0, file.indexOf("."))
-        matchingFiles.push({
-          slug,
-          category: frontmatter.categoria,
-          categoria: frontmatter.categoria,
-          title: frontmatter.title,
-          date: frontmatter.date.toISOString(),
-          featuredimage: frontmatter.featuredimage,
-          markdown: fileContent.content,
-          shortDescription,
-        })
-      }
-    }
+      .map((post) => ({
+        slug: post.slug,
+        category: post.categoria,
+        categoria: post.categoria,
+        title: post.title,
+        date: post.date,
+        featuredimage: post.featuredimage,
+        shortDescription: post.shortDescription,
+      }))
 
     return {
-      props: { matchingFiles, category: category },
+      props: { matchingFiles, category },
     }
   } catch (error) {
     console.error("Error reading files or parsing frontmatter:", error)
-    return {
-      notFound: true,
-    }
+    return { notFound: true }
   }
 }
+
 export async function getStaticPaths() {
   const files = fs.readdirSync("./categories")
   const categories = new Set()

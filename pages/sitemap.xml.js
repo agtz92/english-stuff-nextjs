@@ -1,3 +1,4 @@
+import { getAllPostFiles } from "@/lib/posts"
 import fs from "fs"
 import matter from "gray-matter"
 
@@ -55,14 +56,11 @@ function removeSpecialCharactersAndLowerCase(str) {
 }
 
 export async function getServerSideProps({ res }) {
-  const files = fs.readdirSync("./blog").filter((f) => !f.startsWith("."))
   const categories = new Set()
   const tags = new Set()
 
-  const posts = files.map((file) => {
-    const content = matter(fs.readFileSync(`./blog/${file}`, "utf8"))
-    const frontmatter = content.data
-    const slug = file.slice(0, file.indexOf("."))
+  const posts = getAllPostFiles().map(({ slug, filepath }) => {
+    const { data: frontmatter } = matter(fs.readFileSync(filepath, "utf8"))
 
     if (frontmatter.categoria) {
       categories.add(frontmatter.categoria.toLowerCase())
