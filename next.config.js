@@ -1,16 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const path = require("path")
 
-// next.config.js
 module.exports = {
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
         protocol: "https",
         hostname: "**",
       },
+    ],
+  },
+  // Bundle blog markdown directories with the SSR sitemap function.
+  // The tracer can't infer these from fs.readdirSync(variable) calls.
+  outputFileTracingIncludes: {
+    "/sitemap.xml": [
+      path.join(__dirname, "blog", "**", "*.md"),
+      path.join(__dirname, "feed-blog", "**", "*.md"),
     ],
   },
 }
