@@ -1,2 +1,2 @@
-[[plugins]]
-package = "@netlify/plugin-sitemap"
+# Sitemap is generated dynamically by pages/sitemap.xml.js.
+# Do not enable @netlify/plugin-sitemap — its static output overrides the SSR route.
