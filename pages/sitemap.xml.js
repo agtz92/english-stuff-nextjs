@@ -4,50 +4,70 @@ import matter from "gray-matter"
 
 const SITE_URL = "https://www.3minread.com"
 
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;")
+}
+
+function encodePathSegment(segment) {
+  return segment.split("/").map(encodeURIComponent).join("/")
+}
+
+function buildUrl(path) {
+  return escapeXml(`${SITE_URL}${path}`)
+}
+
+function urlEntry({ loc, lastmod, changefreq, priority }) {
+  const parts = [`    <loc>${loc}</loc>`]
+  if (lastmod) parts.push(`    <lastmod>${lastmod}</lastmod>`)
+  if (changefreq) parts.push(`    <changefreq>${changefreq}</changefreq>`)
+  if (priority) parts.push(`    <priority>${priority}</priority>`)
+  return `  <url>\n${parts.join("\n")}\n  </url>`
+}
+
 function generateSiteMap(posts, categories, tags) {
+  const entries = [
+    urlEntry({
+      loc: buildUrl(""),
+      changefreq: "daily",
+      priority: "1.0",
+    }),
+    urlEntry({
+      loc: buildUrl("/privacy"),
+      changefreq: "yearly",
+      priority: "0.3",
+    }),
+    ...categories.map((category) =>
+      urlEntry({
+        loc: buildUrl(`/categories/${encodePathSegment(category)}`),
+        changefreq: "weekly",
+        priority: "0.7",
+      })
+    ),
+    ...tags.map((tag) =>
+      urlEntry({
+        loc: buildUrl(`/tags/${encodePathSegment(tag)}`),
+        changefreq: "weekly",
+        priority: "0.5",
+      })
+    ),
+    ...posts.map((post) =>
+      urlEntry({
+        loc: buildUrl(`/${encodePathSegment(post.slug)}`),
+        lastmod: post.date,
+        changefreq: "monthly",
+        priority: "0.8",
+      })
+    ),
+  ]
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>${SITE_URL}</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>${SITE_URL}/privacy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  ${categories
-    .map(
-      (category) => `
-  <url>
-    <loc>${SITE_URL}/categories/${category}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>`
-    )
-    .join("")}
-  ${tags
-    .map(
-      (tag) => `
-  <url>
-    <loc>${SITE_URL}/tags/${tag}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>`
-    )
-    .join("")}
-  ${posts
-    .map(
-      (post) => `
-  <url>
-    <loc>${SITE_URL}/${post.slug}</loc>
-    <lastmod>${post.date}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>`
-    )
-    .join("")}
+${entries.join("\n")}
 </urlset>`
 }
 
@@ -67,7 +87,8 @@ export async function getServerSideProps({ res }) {
     }
     if (frontmatter.tags) {
       frontmatter.tags.forEach((tag) => {
-        tags.add(removeSpecialCharactersAndLowerCase(tag))
+        const tagSlug = removeSpecialCharactersAndLowerCase(tag)
+        if (tagSlug) tags.add(tagSlug)
       })
     }
 
@@ -84,7 +105,11 @@ export async function getServerSideProps({ res }) {
     Array.from(tags)
   )
 
-  res.setHeader("Content-Type", "text/xml")
+  res.setHeader("Content-Type", "application/xml; charset=utf-8")
+  res.setHeader(
+    "Cache-Control",
+    "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400"
+  )
   res.write(sitemap)
   res.end()
 
