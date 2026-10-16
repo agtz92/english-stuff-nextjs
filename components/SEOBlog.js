@@ -31,8 +31,11 @@ const SEOBlog = ({ post }) => {
     return inputString.replace(/"/g, '');
   }
 
+  // featuredimage puede ser URL absoluta, ruta "/assets/x.jpg" (Decap CMS / EvergreenSEO) o solo "x.jpg"
   const imageUrl = post.featuredimage?.startsWith("http")
     ? post.featuredimage
+    : post.featuredimage?.startsWith("/")
+    ? `${sitedomain}${post.featuredimage}`
     : `${sitedomain}/assets/${post.featuredimage}`
 
   function addProductJsonLd() {

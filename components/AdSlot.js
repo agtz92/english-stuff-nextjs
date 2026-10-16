@@ -79,6 +79,7 @@ const AdSlot = ({ slot, type = "display", minHeight, style }) => {
   return (
     <div
       ref={containerRef}
+      className="ad-slot"
       style={{
         minHeight: minHeight ?? defaultMinHeight(type),
         margin: "32px 0",
