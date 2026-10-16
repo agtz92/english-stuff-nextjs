@@ -1,6 +1,6 @@
 ---
 title: 'Microdramas Explained: Why One-Minute Soap Operas Are Everywhere'
-date: '2026-10-16T17:46:01.737Z'
+date: '2026-10-16T17:46:05.119Z'
 featuredimage: /assets/evergreen/microdramas-explained-one-minute-soap-operas.jpg
 categoria: Entertainment
 tags:
@@ -103,13 +103,15 @@ mk3: >-
   apps had generated the following cumulative global in-app revenue:
 
 
-  | App | Cumulative global in-app revenue (through March 2025) |
+  <table>
 
-  |---|---|
+  <thead><tr><th>App</th><th>Cumulative global in-app revenue (through March
+  2025)</th></tr></thead>
 
-  | ReelShort | $490 million |
+  <tbody><tr><td>ReelShort</td><td>$490
+  million</td></tr><tr><td>DramaBox</td><td>$450 million</td></tr></tbody>
 
-  | DramaBox | $450 million |
+  </table>
 
 
   Engagement is where the format really stands out. In the U.S., Omdia reports
