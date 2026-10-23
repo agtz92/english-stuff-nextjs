@@ -1,6 +1,6 @@
 ---
 title: 'How to Finish Projects You Keep Abandoning: A 4-Step Method'
-date: '2026-10-23T14:15:55.690Z'
+date: '2026-10-23T14:15:55.693Z'
 featuredimage: /assets/evergreen/how-to-finish-projects.jpg
 categoria: Lifestyle
 tags:
@@ -115,17 +115,8 @@ mk2: >-
   less energy restarting.
 
 
-  A dedicated project tool can make this habit easier.
-  [continuu.it](https://continuu.it) is built around this idea. Every project
-  carries one of four states (Active, Paused, Killed, or Completed), tasks live
-  inside the project, and notes keep the context you would otherwise have to
-  reconstruct. When you come back after three weeks, you see where you stopped.
-  Killed projects go to a Graveyard, which treats killing a project as a form of
-  finishing. It also shows how many projects you start against how many you
-  finish, and it has a free plan. It is a project tracker rather than a
-  documentation tool, so it won't replace a wiki app like Notion. A notebook or
-  spreadsheet works too, as long as every project has an explicit state. In a
-  spreadsheet, a [dropdown
+  A notebook or spreadsheet is enough to keep these labels, as long as every
+  project has an explicit state. In a spreadsheet, a [dropdown
   list](https://www.3minread.com/how-to-create-dropdown-list-google-sheets) lets
   you pick one of the four states from a menu so the labels stay consistent.
 
@@ -143,6 +134,25 @@ mk2: >-
   the next checkpoint. A date does not promise completion. It creates a moment
   to decide, instead of letting the project drift for months. Treat it as a
   checkpoint, not a deadline you must hit at any cost.
+
+
+  Dates alone rarely carry a project to the end. What does is a small, repeated
+  habit: a recurring work session, such as 30 minutes every Tuesday and
+  Thursday, that you actually show up for. Tracking that habit matters as much
+  as tracking the project, because a skipped session is the earliest sign that a
+  project is starting to drift.
+
+
+  A habit tracker that also knows about your projects makes this easier.
+  [continuu.it](https://continuu.it) lets you set the work session as a
+  recurring routine and check it off each time, right next to the project it
+  serves and the next action you wrote down. A morning briefing by email or
+  Telegram reminds you what is due that day, a weekly Sunday review asks how the
+  week went, and a project that sits untouched for 14 days gets flagged so you
+  decide its state instead of letting it drift. The free plan includes two
+  active routines, which is enough to rescue one stalled project. A paper
+  calendar where you cross off each session works too. The point is to see the
+  chain of sessions and notice the moment it breaks.
 
 
   Telling one person your finish line and review date adds a light form of
@@ -230,9 +240,12 @@ mk4: >-
 
   5. Write the next physical action and put it on your calendar.
 
-  6. Set a review date 30 days out or sooner.
+  6. Schedule a recurring work session and track it as a habit, checking it off
+  each time you show up.
 
-  7. On that date, answer the four checkpoint questions and act on the table.
+  7. Set a review date 30 days out or sooner.
+
+  8. On that date, answer the four checkpoint questions and act on the table.
 
 
   Common mistakes to avoid:
@@ -253,8 +266,10 @@ mk5: >-
 
 
   Most abandonment starts at the midpoint, when the excitement fades and the
-  next step gets fuzzy. Keep a visible next action and a review date. The
-  midpoint slump becomes a checkpoint instead of a silent exit.
+  next step gets fuzzy. Keep a visible next action, a review date, and a
+  recurring work session you track like any other habit. The midpoint slump
+  becomes a checkpoint instead of a silent exit, and a skipped session warns you
+  before the project goes quiet.
 
 
   ### Is it okay to quit a project?
